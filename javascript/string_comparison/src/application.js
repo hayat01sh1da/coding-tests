@@ -7,16 +7,14 @@ const Application = class {
   }
 
   exactly_equal_size_and_included() {
-    return this._sort_string(this.str_1) === this._sort_string(this.str_2);
+    return this.__sort_string__(this.str_1) === this.__sort_string__(this.str_2);
   }
 
   // private
 
-  _sort_string(str) {
+  __sort_string__(str) {
     return str.split("").sort().join("");
   }
 }
 
-export {
-  Application
-};
+export default Application
