@@ -1,0 +1,17 @@
+# Python
+
+python/calculator_cli_app/src/__pycache__
+python/calculator_cli_app/src/lib/__pycache__
+python/calculator_cli_app/src/queries/__pycache__
+python/calculator_cli_app/src/validations/__pycache__
+python/fibonacci/src/__pycache__
+python/fizzbuzz/src/__pycache__
+python/json_data_sorter/src/__pycache__
+python/letter_inspection/src/__pycache__
+python/nabeatsu/src/__pycache__
+python/string_comparison/src/__pycache__
+python/template_creator/src/__pycache__
+
+# JavaScript
+
+javascript/node_modules/
