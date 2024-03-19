@@ -28,7 +28,7 @@ module Queries
     end
 
     def ask_server(n)
-      params    = { seed: seed, n: n }
+      params    = { seed:, n: }
       uri.query = URI.encode_www_form(params)
       req       = Net::HTTP::Get.new(uri)
       res       = Net::HTTP.start(uri.host, uri.port) {|http| http.request(req) }
