@@ -14,7 +14,7 @@ module CalculatorCliApp
     def run
       validate!(args_size, seed, n.to_i.nonzero?)
 
-      result = calulation_query.f(n)
+      result = calculation_query.f(n)
       puts result
     end
 
@@ -22,8 +22,8 @@ module CalculatorCliApp
 
     attr_reader :args_size, :seed, :n
 
-    def calulation_query
-      @calulation_query ||= ::Queries::CalculationQuery.new(seed)
+    def calculation_query
+      @calculation_query ||= ::Queries::CalculationQuery.new(seed)
     end
   end
 end

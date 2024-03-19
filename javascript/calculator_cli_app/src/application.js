@@ -6,24 +6,24 @@ const Application = class {
     this.args_size        = args.length;
     this.seed             = args[0];
     this.n                = args[args.length -1];
-    this.calulation_query = null;
+    this.calculation_query = null;
   }
 
   run() {
     validate(this.args_size, this.seed, parseInt(this.n));
 
-    const result = this._calulation_query().f(parseInt(this.n));
+    const result = this.__calculation_query__().f(parseInt(this.n));
     console.log(result);
   }
 
   // private
 
-  _calulation_query() {
-    if (this.calulation_query === null) {
-      this.calulation_query = new CalculationQuery(this.seed);
-      return this.calulation_query;
+  __calculation_query__() {
+    if (this.__calculation_query__ === null) {
+      this.__calculation_query__ = new CalculationQuery(this.seed);
+      return this.__calculation_query__;
     } else {
-      return this.calulation_query;
+      return this.__calculation_query__;
     }
   }
 }
