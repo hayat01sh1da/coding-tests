@@ -8,6 +8,10 @@ class CalculatorCliApp::ApplicationTest < Minitest::Test
   end
 
   def test_run_success
-    assert_output("348\n") { @app.run }
+    assert_output("348\n") { app.run }
   end
+
+  private
+
+  attr_reader :app
 end

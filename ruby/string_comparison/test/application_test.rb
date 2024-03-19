@@ -13,14 +13,18 @@ class LetterInspection::ApplicationTest < Minitest::Test
   end
 
   def test_exactly_equal_size_and_included_1
-    assert_equal true,  @pattern_1.exactly_equal_size_and_included?
+    assert_equal true,  pattern_1.exactly_equal_size_and_included?
   end
 
   def test_exactly_equal_size_and_included_2
-    assert_equal false, @pattern_2.exactly_equal_size_and_included?
+    assert_equal false, pattern_2.exactly_equal_size_and_included?
   end
 
   def test_exactly_equal_size_and_included_3
-    assert_equal false, @pattern_3.exactly_equal_size_and_included?
+    assert_equal false, pattern_3.exactly_equal_size_and_included?
   end
+
+  private
+
+  attr_reader :pattern_1, :pattern_2, :pattern_3
 end
