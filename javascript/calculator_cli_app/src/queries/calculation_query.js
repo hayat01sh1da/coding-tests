@@ -50,6 +50,4 @@ const CalculationQuery = class {
   }
 }
 
-export {
-  CalculationQuery
-};
+export default CalculationQuery

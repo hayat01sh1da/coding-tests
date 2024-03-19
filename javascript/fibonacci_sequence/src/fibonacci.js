@@ -11,6 +11,4 @@ const fibonacci = (init_num, iter) => {
   return result;
 }
 
-export {
-  fibonacci
-};
+export default fibonacci

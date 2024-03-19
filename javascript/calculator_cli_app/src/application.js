@@ -1,5 +1,5 @@
-import { CalculationQuery } from './queies/calculation_query';
-import { validate } from './validations/args_validation';
+import CalculationQuery from './queries/calculation_query';
+import validate from './validations/args_validation';
 
 const Application = class {
   constructor(args) {
@@ -28,6 +28,4 @@ const Application = class {
   }
 }
 
-export {
-  Application
-};
+export default Application

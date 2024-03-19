@@ -1,8 +1,6 @@
 "use strict;"
 
-import {
-  CalculationQuery
-} from "../../src/queries/calculation_query";
+import CalculationQuery from "../../src/queries/calculation_query";
 
 const calculation_query = new CalculationQuery("foo");
 

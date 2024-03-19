@@ -1,8 +1,6 @@
 "use strict;"
 
-import {
-  fibonacci
-} from "../src/fibonacci";
+import fibonacci from "../src/fibonacci";
 
 test("Fibonacci1", () => {
   expect(fibonacci(0, 10)).toStrictEqual(

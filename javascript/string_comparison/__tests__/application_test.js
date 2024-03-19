@@ -1,8 +1,6 @@
 "use strict;"
 
-import {
-  Application
-} from "../src/application";
+import Application from "../src/application";
 
 const str_1     = "hogefoobar";
 const str_2     = "abefghooor";

@@ -14,6 +14,4 @@ const validate = (args_size, seed, n) => {
   }
 }
 
-export {
-  validate
-};
+export default validate
