@@ -4,7 +4,10 @@ sys.path.append('./src')
 from fizzbuzz import *
 
 class TestFizzBuzz(unittest.TestCase):
-    def test_fizzbuzz_in_if(self):
+    pass
+
+class TestIfStatement(TestFizzBuzz):
+    def test_fizzbuzz(self):
         for num in range(1, 101):
             if num % 3 == 0 and num % 5 == 0:
                 self.assertEqual('FizzBuzz', fizzbuzz_in_if(num))
@@ -15,7 +18,8 @@ class TestFizzBuzz(unittest.TestCase):
             else:
                 self.assertEqual(str(num), fizzbuzz_in_if(num))
 
-    def test_fizzbuzz_in_ternary(self):
+class TestTernaryStatement(TestFizzBuzz):
+    def test_fizzbuzz(self):
         for num in range(1, 101):
             if num % 3 == 0 and num % 5 == 0:
                 self.assertEqual('FizzBuzz', fizzbuzz_in_ternary(num))

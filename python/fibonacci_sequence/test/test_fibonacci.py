@@ -4,13 +4,17 @@ sys.path.append('./src')
 from fibonacci import *
 
 class TestFibonacci(unittest.TestCase):
-    def test_fibonacci_1(self):
+    pass
+
+class TestCase1(TestFibonacci):
+    def test_fibonacci(self):
         self.assertEqual(
             [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
             fibonacci(0, 10)
         )
 
-    def test_fibonacci_2(self):
+class TestCase2(TestFibonacci):
+    def test_fibonacci(self):
         self.assertEqual(
             [10, 11, 21, 32, 53, 85, 138, 223, 361, 584],
             fibonacci(10, 10)
