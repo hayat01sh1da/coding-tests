@@ -1,10 +1,19 @@
 import unittest
 import sys
+import glob
+import os
+import shutil
 sys.path.append('./src')
 from fizzbuzz import *
 
 class TestFizzBuzz(unittest.TestCase):
-    pass
+    def setUp(self):
+        self.pycaches = glob.glob(os.path.join('.', '**', '__pycache__'))
+
+    def tearDown(self):
+        for pycache in self.pycaches:
+            if os.path.isdir(pycache):
+                shutil.rmtree(pycache)
 
 class TestIfStatement(TestFizzBuzz):
     def test_fizzbuzz(self):

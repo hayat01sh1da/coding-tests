@@ -1,6 +1,9 @@
 import unittest
 import sys
 from io import StringIO
+import glob
+import os
+import shutil
 sys.path.append('./src')
 sys.path.append('./src/lib')
 sys.path.append('./src/queries')
@@ -13,6 +16,7 @@ class TestApplication(unittest.TestCase):
         sys.stdout      = StringIO()
         argv            = ['foo', 4]
         self.app        = Application(argv)
+        self.pycaches   = glob.glob(os.path.join('.', '**', '__pycache__'))
 
     def test_run_success(self):
         self.app.run()
@@ -20,6 +24,9 @@ class TestApplication(unittest.TestCase):
 
     def tearDown(self):
         sys.stdout = self.org_stdout
+        for pycache in self.pycaches:
+            if os.path.isdir(pycache):
+                shutil.rmtree(pycache)
 
 if __name__ == '__main__':
     unittest.main()

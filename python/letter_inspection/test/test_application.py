@@ -1,5 +1,8 @@
 import unittest
 import sys
+import glob
+import os
+import shutil
 sys.path.append('./src')
 from application import Application
 
@@ -12,6 +15,12 @@ class TestApplication(unittest.TestCase):
         self.pattern_1 = Application(str_1, str_2)
         self.pattern_2 = Application(str_1, str_3)
         self.pattern_3 = Application(str_1, str_4)
+        self.pycaches  = glob.glob(os.path.join('.', '**', '__pycache__'))
+
+    def tearDown(self):
+        for pycache in self.pycaches:
+            if os.path.isdir(pycache):
+                shutil.rmtree(pycache)
 
 class TestRegularCase(TestApplication):
     def test_exactly_equal_size_and_included_1(self):
