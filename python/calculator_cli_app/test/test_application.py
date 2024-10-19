@@ -25,7 +25,7 @@ class TestApplication(unittest.TestCase):
     def tearDown(self):
         sys.stdout = self.org_stdout
         for pycache in self.pycaches:
-            if os.path.isdir(pycache):
+            if os.path.exists(pycache):
                 shutil.rmtree(pycache)
 
 if __name__ == '__main__':

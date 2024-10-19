@@ -19,5 +19,5 @@ print(result_2)
 
 pycaches = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 for pycache in pycaches:
-    if os.path.isdir(pycache):
+    if os.path.exists(pycache):
         shutil.rmtree(pycache)
