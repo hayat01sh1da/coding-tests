@@ -32,7 +32,7 @@ module Queries
       uri.query = URI.encode_www_form(params)
       req       = Net::HTTP::Get.new(uri)
       res       = Net::HTTP.start(uri.host, uri.port) { _1.request(req) }
-      result    = JSON.parse(res.body)['result']
+      JSON.parse(res.body)['result']
     end
   end
 end
