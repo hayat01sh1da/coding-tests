@@ -16,7 +16,7 @@ class TestApplication(unittest.TestCase):
         sys.stdout      = StringIO()
         argv            = ['foo', 4]
         self.app        = Application(argv)
-        self.pycaches   = glob.glob(os.path.join('.', '**', '__pycache__'))
+        self.pycaches   = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
     def test_run_success(self):
         self.app.run()

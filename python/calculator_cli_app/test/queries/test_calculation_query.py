@@ -9,7 +9,7 @@ from calculation_query import CalculationQuery
 class TestCalculationQuery(unittest.TestCase):
     def setUp(self):
         self.calculation_query = CalculationQuery('foo')
-        self.pycaches          = glob.glob(os.path.join('.', '**', '__pycache__'))
+        self.pycaches          = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
     def tearDown(self):
         sys.stdout = self.org_stdout

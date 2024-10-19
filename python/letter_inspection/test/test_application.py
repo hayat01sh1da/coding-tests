@@ -15,7 +15,7 @@ class TestApplication(unittest.TestCase):
         self.pattern_1 = Application(str_1, str_2)
         self.pattern_2 = Application(str_1, str_3)
         self.pattern_3 = Application(str_1, str_4)
-        self.pycaches  = glob.glob(os.path.join('.', '**', '__pycache__'))
+        self.pycaches  = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
     def tearDown(self):
         for pycache in self.pycaches:
