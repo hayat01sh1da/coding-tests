@@ -1,4 +1,7 @@
 import sys
+import os
+import shutil
+import glob
 sys.path.append('./nabeatsu/src')
 from nabeatsu import *
 
@@ -13,3 +16,8 @@ for i in range(1, 41):
 
 print(result_1)
 print(result_2)
+
+pycaches = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
+for pycache in pycaches:
+    if os.path.isdir(pycache):
+        shutil.rmtree(pycache)
