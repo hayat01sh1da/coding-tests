@@ -1,5 +1,6 @@
 import unittest
 import sys
+from io import StringIO
 import glob
 import os
 import shutil
@@ -9,6 +10,8 @@ from calculation_query import CalculationQuery
 class TestCalculationQuery(unittest.TestCase):
     def setUp(self):
         self.calculation_query = CalculationQuery('foo')
+        self.org_stdout        = sys.stdout
+        sys.stdout             = StringIO()
         self.pycaches          = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
     def tearDown(self):
