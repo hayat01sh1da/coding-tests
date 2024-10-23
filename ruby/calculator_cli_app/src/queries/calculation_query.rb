@@ -1,5 +1,6 @@
 require 'net/http'
 require 'json'
+require 'dotenv/load'
 
 module Queries
   class CalculationQuery
