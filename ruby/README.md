@@ -1,11 +1,12 @@
 ## 1. Environment
 
 - Ruby 3.3.5
+- dotenv 3.1.4
 
 ## 2. Bulk Execution of Unit Tests
 
 ```command
-$ cd ./ruby/
+$ cd ./ruby
 $ rake
 Run options: --seed 20563
 
