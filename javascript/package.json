@@ -8,22 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oasis-forever/coding-test-js.git"
+    "url": "git+https://github.com/hayat01sh1da/coding-tests.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/oasis-forever/coding-test-js/issues"
+    "url": "https://github.com/hayat01sh1da/coding-tests/issues"
   },
-  "homepage": "https://github.com/oasis-forever/coding-test-js#readme",
+  "homepage": "https://github.com/hayat01sh1da/coding-tests/javascript#readme",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0"
-  },
-  "directories": {
-    "lib": "lib"
   }
 }
