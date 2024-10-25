@@ -32,6 +32,6 @@ jobs:
           CALCULATION_API: ${{ vars.CALCULATION_API }}
         run: |
           cd ./ruby
-          gem install dotenv
-          echo 'CALCULATION_API=$CALCULATION_API' >> .env
+          echo 'export CALCULATION_API=$CALCULATION_API' >> ~/.bash_profile
+          source ~/.bash_profile
           rake
