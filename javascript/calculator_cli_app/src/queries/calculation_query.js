@@ -43,8 +43,8 @@ const CalculationQuery = class {
         result = JSON.parse(body).result;
       });
 
-    }).on("error", (e) => {
-      result = e.message;
+    }).on("error", (error) => {
+      result = error.message;
     });
     return result;
   }
