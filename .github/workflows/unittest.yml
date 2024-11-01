@@ -36,6 +36,5 @@ jobs:
       - name: Run UnitTest
         env:
           CALCULATION_API: ${{ env.CALCULATION_API }}
-        run: |
-            cd ./python
-            bash run_unittests.sh
+        working-directory: ./python
+        run: bash run_unittests.sh
