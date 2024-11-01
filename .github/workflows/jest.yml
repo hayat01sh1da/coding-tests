@@ -6,8 +6,12 @@ name: Jest
 on:
   push:
     branches: [master]
+    paths:
+      - ./javascript
   pull_request:
     branches: [master]
+    paths:
+      - ./javascript
 
 permissions:
   contents: read
