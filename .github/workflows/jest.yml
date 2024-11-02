@@ -12,6 +12,7 @@ on:
       - master
     paths:
       - ./javascript
+      - '!./javascript/README.md'
 
 permissions:
   contents: read
