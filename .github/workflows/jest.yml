@@ -8,14 +8,18 @@ on:
     branches:
       - master
     paths:
-      - ./javascript
-      - '!./javascript/README.md'
+      - '.github/workflows/jest.yml'
+      - 'javascript/package.json'
+      - 'javascript/yarn.lock'
+      - '**.js'
   pull_request:
     branches:
       - master
     paths:
-      - ./javascript
-      - '!./javascript/README.md'
+      - '.github/workflows/jest.yml'
+      - 'javascript/package.json'
+      - 'javascript/yarn.lock'
+      - '**.js'
 
 permissions:
   contents: read
