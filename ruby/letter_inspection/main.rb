@@ -8,6 +8,6 @@ pattern_1 = LetterInspection::Application.new(str_1, str_2)
 pattern_2 = LetterInspection::Application.new(str_1, str_3)
 pattern_3 = LetterInspection::Application.new(str_1, str_4)
 
-p pattern_1.exactly_equal_size_and_included?
+p patternit.exactly_equal_size_and_included?
 p pattern_2.exactly_equal_size_and_included?
 p pattern_3.exactly_equal_size_and_included?

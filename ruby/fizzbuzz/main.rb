@@ -5,7 +5,7 @@ result_2 = Array.new
 result_3 = Array.new
 
 1.upto(100).each do |num|
-  result_1.push(fizzbuzz_in_if(num))
+  resultit.push(fizzbuzz_in_if(num))
   result_2.push(fizzbuzz_in_if_and_ternary(num))
   result_3.push(fizzbuzz_in_ternary(num))
 end
