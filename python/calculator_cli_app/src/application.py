@@ -16,19 +16,10 @@ class Application:
         else:
             self.seed = ''
             self.n    = ''
-        self.calculation_query = None
+        self.calculation_query = CalculationQuery(self.seed)
 
     def run(self):
         __validate__(self.args_size, self.seed, __to_int_with_rescue__(self.n))
 
-        result = self.__calculation_query__().f(__to_int_with_rescue__(self.n))
+        result = self.calculation_query.f(__to_int_with_rescue__(self.n))
         print(result)
-
-    # private
-
-    def __calculation_query__(self):
-        if self.calculation_query:
-            return self.calculation_query
-        else:
-            self.calculation_query = CalculationQuery(self.seed)
-            return self.calculation_query
