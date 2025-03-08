@@ -9,13 +9,13 @@ on:
       - '.github/workflows/jest.yml'
       - 'javascript/package.json'
       - 'javascript/yarn.lock'
-      - '**.js'
+      - 'javascript/**/*.js'
   pull_request:
     paths:
       - '.github/workflows/jest.yml'
       - 'javascript/package.json'
       - 'javascript/yarn.lock'
-      - '**.js'
+      - 'javascript/**/*.js'
 
 permissions:
   contents: read
