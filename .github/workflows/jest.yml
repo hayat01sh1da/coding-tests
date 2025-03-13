@@ -26,16 +26,13 @@ jobs:
   build:
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22.10.0]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-      # https://github.com/actions/setup-node/
+      - uses: actions/checkout@v4
+        # https://github.com/actions/setup-node/
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: '../.node-version'
+          node-version-file: '.node-version'
       - name: Install Packages
         working-directory: ./javascript
         run: yarn install
