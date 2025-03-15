@@ -1,7 +1,7 @@
 ## 1. Environment
 
-- node v23.1.0
-- node 10.9.0
+- Node v23.10.0
+- NPM 11.2.0
 
 ## 2. JEST install for Unit Test
 
