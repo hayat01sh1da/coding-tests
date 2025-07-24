@@ -24,18 +24,18 @@ class TestApplication(unittest.TestCase):
 
 class TestRegularCase(TestApplication):
     def test_exactly_equal_size_and_included_1(self):
-        self.assertEqual(True, self.pattern_1.exactly_equal_size_and_included())
+        self.assertTrue(self.pattern_1.exactly_equal_size_and_included())
 
 class TestIrregularCase(TestApplication):
     pass
 
 class TestCase1(TestIrregularCase):
     def test_exactly_equal_size_and_included_2(self):
-        self.assertEqual(False, self.pattern_2.exactly_equal_size_and_included())
+        self.assertFalse(self.pattern_2.exactly_equal_size_and_included())
 
 class TestCase1(TestIrregularCase):
     def test_exactly_equal_size_and_included_3(self):
-        self.assertEqual(False, self.pattern_3.exactly_equal_size_and_included())
+        self.assertFalse(self.pattern_3.exactly_equal_size_and_included())
 
 if __name__ == '__main__':
     unittest.main()

@@ -20,7 +20,7 @@ class TestApplication(unittest.TestCase):
 
     def test_run_success(self):
         self.app.run()
-        self.assertEqual('348\n', sys.stdout.getvalue())
+        self.assertEqual(sys.stdout.getvalue(), '348\n')
 
     def tearDown(self):
         sys.stdout = self.org_stdout

@@ -18,15 +18,15 @@ class TestFibonacci(unittest.TestCase):
 class TestCase1(TestFibonacci):
     def test_fibonacci(self):
         self.assertEqual(
-            [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
-            fibonacci(0, 10)
+            fibonacci(0, 10),
+            [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
         )
 
 class TestCase2(TestFibonacci):
     def test_fibonacci(self):
         self.assertEqual(
-            [10, 11, 21, 32, 53, 85, 138, 223, 361, 584],
-            fibonacci(10, 10)
+            fibonacci(10, 10),
+            [10, 11, 21, 32, 53, 85, 138, 223, 361, 584]
         )
 
 if __name__ == '__main__':

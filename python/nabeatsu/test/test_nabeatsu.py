@@ -19,17 +19,17 @@ class TestIfStatement(TestNabeatsu):
     def test_go_crazy(self):
         for num in range(1, 41):
             if num % 3 == 0 or '3' in str(num):
-                self.assertEqual(str(num) + '!', go_crazy_in_if(num))
+                self.assertEqual(go_crazy_in_if(num), str(num) + '!')
             else:
-                self.assertEqual(str(num), go_crazy_in_if(num))
+                self.assertEqual(go_crazy_in_if(num), str(num))
 
 class TestTernaryStatement(TestNabeatsu):
     def test_go_crazy(self):
         for num in range(1, 41):
             if num % 3 == 0 or '3' in str(num):
-                self.assertEqual(str(num) + '!', go_crazy_in_ternary(num))
+                self.assertEqual(go_crazy_in_ternary(num), str(num) + '!')
             else:
-                self.assertEqual(str(num), go_crazy_in_ternary(num))
+                self.assertEqual(go_crazy_in_ternary(num), str(num))
 
 if __name__ == '__main__':
     unittest.main()

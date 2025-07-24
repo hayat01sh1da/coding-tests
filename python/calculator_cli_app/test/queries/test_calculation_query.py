@@ -22,15 +22,15 @@ class TestCalculationQuery(unittest.TestCase):
 
 class TestArgumentZero(TestCalculationQuery):
     def test_f_with_zero(self):
-        self.assertEqual(1, self.calculation_query.f(0))
+        self.assertEqual(self.calculation_query.f(0), 1)
 
 class TestArgumentTwo(TestCalculationQuery):
     def test_f_with_two(self):
-        self.assertEqual(2, self.calculation_query.f(2))
+        self.assertEqual(self.calculation_query.f(2), 2)
 
 class TestArgumentFour(TestCalculationQuery):
     def test_f_with_four(self):
-        self.assertEqual(348, self.calculation_query.f(4))
+        self.assertEqual(self.calculation_query.f(4), 348)
 
 if __name__ == '__main__':
     unittest.main()
