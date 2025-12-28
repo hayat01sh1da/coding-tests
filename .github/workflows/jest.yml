@@ -11,14 +11,14 @@ on:
       - '.github/workflows/jest.yml'
       - './node-version'
       - 'javascript/package.json'
-      - 'javascript/yarn.lock'
+      - 'javascript/pnpm-lock.yaml'
       - 'javascript/**/*.js'
   pull_request:
     paths:
       - '.github/workflows/jest.yml'
       - './node-version'
       - 'javascript/package.json'
-      - 'javascript/yarn.lock'
+      - 'javascript/pnpm-lock.yaml'
       - 'javascript/**/*.js'
 
 permissions:
