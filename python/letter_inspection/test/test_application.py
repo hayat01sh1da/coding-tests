@@ -12,9 +12,9 @@ class TestApplication(unittest.TestCase):
         str_2          = 'abefghooor'
         str_3          = 'hoge'
         str_4          = 'piyopoopee'
-        self.pattern_1 = Application(str_1, str_2)
-        self.pattern_2 = Application(str_1, str_3)
-        self.pattern_3 = Application(str_1, str_4)
+        self.pattern_1 = Application(str_1 = str_1, str_2 = str_2)
+        self.pattern_2 = Application(str_1 = str_1, str_2 = str_3)
+        self.pattern_3 = Application(str_1 = str_1, str_2 = str_4)
         self.pycaches  = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
     def tearDown(self):

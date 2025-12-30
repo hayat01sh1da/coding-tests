@@ -15,7 +15,7 @@ class TestApplication(unittest.TestCase):
         self.org_stdout = sys.stdout
         sys.stdout      = StringIO()
         argv            = ['foo', 4]
-        self.app        = Application(argv)
+        self.app        = Application(args = argv)
         self.pycaches   = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
     def test_run_success(self):
