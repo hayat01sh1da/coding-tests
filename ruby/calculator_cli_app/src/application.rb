@@ -6,7 +6,7 @@ module CalculatorCliApp
     include ::Validations::ArgsValidation
 
     def initialize(args)
-      @args_size = args.size
+      @args_size = args.length
       @seed      = args.first
       @n         = args.last
     end
