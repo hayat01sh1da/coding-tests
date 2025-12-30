@@ -6,7 +6,7 @@ sys.path.append('./calculator_cli_app/src')
 from application import Application
 
 sys.argv.pop(0)
-app = Application(sys.argv)
+app = Application(args = sys.argv)
 app.run()
 
 pycaches = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
