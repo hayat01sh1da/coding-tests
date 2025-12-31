@@ -9,6 +9,7 @@ The following table lists which versions of this project currently receive secur
 | Latest (main branch) | :white_check_mark: |
 | Latest stable release | :white_check_mark: |
 | Older releases       | :x:                |
+
 ## Reporting a Vulnerability
 
 Use this section to tell people how to report a vulnerability.
