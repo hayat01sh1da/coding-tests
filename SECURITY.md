@@ -4,13 +4,11 @@
 
 The following table lists which versions of this project currently receive security updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
-
+| Version              | Supported          |
+| -------------------- | ------------------ |
+| Latest (main branch) | :white_check_mark: |
+| Latest stable release | :white_check_mark: |
+| Older releases       | :x:                |
 ## Reporting a Vulnerability
 
 Use this section to tell people how to report a vulnerability.
