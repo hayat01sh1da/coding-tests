@@ -24,7 +24,7 @@
 Please disclose security issues privately:
 
 1. Use GitHub’s **Security → Report a vulnerability** flow to open a private  advisory (preferred).
-2. If GitHub is unavailable, email `security@project.org` with reproduction  steps, affected tracks, and expected/actual behavior.
+2. If GitHub is unavailable, contact the maintainers using the email address or contact method listed in the repository or organization profile, including reproduction steps, affected tracks, and expected/actual behavior.
 
 We respond within **3 business days** and keep you updated at least every **7 business days**.  
 After remediation we will coordinate disclosure and offer credit if desired.
