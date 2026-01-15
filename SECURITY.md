@@ -2,10 +2,8 @@
 
 ## Supported Versions
 
-- Only the latest content on `master` receives fixes. Exercises should be
-	synced before reporting issues.
-- Archived kata or historical snapshots are considered out of scope for
-	security servicing.
+- Only the latest content on `master` receives fixes. Exercises should be synced before reporting issues.
+- Archived kata or historical snapshots are considered out of scope for security servicing.
 
 ## Ecosystem & Compatibility
 
@@ -18,21 +16,15 @@
 
 ## Backward Compatibility
 
-- Katas aim to remain stable within a runtime line (Ruby 4.0.x, Python 3.14.x,
-	Node 25.x). When an exercise requires a breaking change, the README for that
-	kata will call it out explicitly.
-- Older interpreter majors are not tested and will not receive security
-	backports. Please upgrade your toolchain before filing security reports.
+- Katas aim to remain stable within a runtime line (Ruby 4.0.x, Python 3.14.x, Node 25.x). When an exercise requires a breaking change, the README for that kata will call it out explicitly.
+- Older interpreter majors are not tested and will not receive security backports. Please upgrade your toolchain before filing security reports.
 
 ## Reporting a Vulnerability
 
 Please disclose security issues privately:
 
-1. Use GitHub’s **Security → Report a vulnerability** flow to open a private
-	 advisory (preferred).
-2. If GitHub is unavailable, email `security@project.org` with reproduction
-	 steps, affected tracks, and expected/actual behavior.
+1. Use GitHub’s **Security → Report a vulnerability** flow to open a private  advisory (preferred).
+2. If GitHub is unavailable, email `security@project.org` with reproduction  steps, affected tracks, and expected/actual behavior.
 
-We respond within **3 business days** and keep you updated at least every **7
-business days**. After remediation we will coordinate disclosure and offer
-credit if desired.
+We respond within **3 business days** and keep you updated at least every **7 business days**.  
+After remediation we will coordinate disclosure and offer credit if desired.
