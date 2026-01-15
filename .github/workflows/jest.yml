@@ -9,14 +9,14 @@ on:
       - master
     paths:
       - '.github/workflows/jest.yml'
-      - './node-version'
+      - '.node-version'
       - 'javascript/package.json'
       - 'javascript/pnpm-lock.yaml'
       - 'javascript/**/*.js'
   pull_request:
     paths:
       - '.github/workflows/jest.yml'
-      - './node-version'
+      - '.node-version'
       - 'javascript/package.json'
       - 'javascript/pnpm-lock.yaml'
       - 'javascript/**/*.js'
