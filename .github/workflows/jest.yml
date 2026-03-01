@@ -39,7 +39,7 @@ jobs:
         run: corepack enable
       - name: Install Packages
         working-directory: ./javascript
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Run Jest
         working-directory: ./javascript
         run: pnpm exec jest
