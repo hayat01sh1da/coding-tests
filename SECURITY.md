@@ -1,5 +1,3 @@
-# Security Policy
-
 ## Supported Versions
 
 - Only the latest content on `master` receives fixes. Exercises should be synced before reporting issues.
@@ -21,10 +19,7 @@
 
 ## Reporting a Vulnerability
 
-Please disclose security issues privately:
+Please report issues privately via **GitHub Security Advisory** (preferred) — open through the repository’s **Security → Report a vulnerability** workflow.
 
-1. Use GitHub’s **Security → Report a vulnerability** flow to open a private  advisory (preferred).
-2. If GitHub is unavailable, contact the maintainers using the email address or contact method listed in the repository or organization profile, including reproduction steps, affected tracks, and expected/actual behavior.
-
-We respond within **3 business days** and keep you updated at least every **7 business days**.  
-After remediation we will coordinate disclosure and offer credit if desired.
+Acknowledgement occurs and status updates follow as soon as possible.  
+After remediation we publish guidance alongside required dependency updates.
