@@ -1,6 +1,6 @@
 ## 1. Environment
 
-- Ruby 4.0.2
+  |- Ruby 4.0.2
 
 ## 2. Bulk Execution of Unit Tests
 
