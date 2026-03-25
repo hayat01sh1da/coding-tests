@@ -5,7 +5,7 @@
 
 ## 1. Common Environment
 
-- WSL(Ubuntu 25.10)
+- WSL (Ubuntu 25.10)
 
 ## 2. READMEs
 
