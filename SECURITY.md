@@ -5,12 +5,12 @@
 
 ## Ecosystem & Compatibility
 
-| Track / Component      | Version(s) / Tooling          | Notes |
-| ---------------------- | ----------------------------- | ----- |
-| OS baseline            | WSL (Ubuntu 24.4.3 LTS)       | Shared development environment across languages. |
-| Ruby exercises         | Ruby 4.0.2 (`.ruby-version`)  | Bundler-managed gems per kata; default relies on stdlib. |
-| Python exercises       | CPython 3.14.3 (`.python-version`) | Requirements are declared per exercise; base templates use stdlib only. |
-| JavaScript exercises   | Node v25.8.1 (`.node-version`) | Use the Node toolchain plus any dependencies listed inside each `package.json`. |
+| Track / Component    | Version(s) / Tooling               | Notes                                                                           |
+| -------------------- | ---------------------------------- | ------------------------------------------------------------------------------- |
+| OS baseline          | WSL (Ubuntu 25.10)                 | Shared environment across tracks.                                               |
+| Ruby exercises       | Ruby 4.0.2 (`.ruby-version`)       | Bundler-managed gems per kata; default relies on stdlib.                        |
+| Python exercises     | CPython 3.14.3 (`.python-version`) | Requirements are declared per exercise; base templates use stdlib only.         |
+| JavaScript exercises | Node v25.8.1 (`.node-version`)     | Use the Node toolchain plus any dependencies listed inside each `package.json`. |
 
 ## Backward Compatibility
 
