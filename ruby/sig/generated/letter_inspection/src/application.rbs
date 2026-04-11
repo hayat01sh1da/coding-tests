@@ -1,0 +1,28 @@
+# Generated from letter_inspection/src/application.rb with RBS::Inline
+
+module LetterInspection
+  class Application
+    # @rbs source: String
+    # @rbs target: String
+    # @rbs return: bool
+    def self.exactly_equal_size_and_included?: (source: String, target: String) -> bool
+
+    # @rbs source: String
+    # @rbs target: String
+    # @rbs return: void
+    def initialize: (String source, String target) -> void
+
+    # @rbs return: bool
+    def exactly_equal_size_and_included?: () -> bool
+
+    private
+
+    attr_reader source: untyped
+
+    attr_reader target: untyped
+
+    # @rbs str: String
+    # @rbs return: String
+    def sort_string: (String str) -> String
+  end
+end
