@@ -1,3 +1,5 @@
+# rbs_inline: enabled
+
 require_relative './src/nabeatsu'
 
 result_1 = Array.new

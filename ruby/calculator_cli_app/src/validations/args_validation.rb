@@ -1,5 +1,11 @@
+# rbs_inline: enabled
+
 module Validations
   module ArgsValidation
+    # @rbs args_size: Integer
+    # @rbs seed: String
+    # @rbs n: Integer?
+    # @rbs return: void
     def validate!(args_size, seed, n)
       if args_size > 2
         puts 'Too many arguments'

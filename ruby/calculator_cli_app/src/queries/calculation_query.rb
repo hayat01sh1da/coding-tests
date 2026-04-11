@@ -1,12 +1,18 @@
+# rbs_inline: enabled
+
 require 'net/http'
 require 'json'
 
 module Queries
   class CalculationQuery
+    # @rbs seed: String
+    # @rbs return: void
     def initialize(seed)
       @seed = seed
     end
 
+    # @rbs n: Integer
+    # @rbs return: Integer
     def f(n)
       if n == 0
         1
@@ -23,10 +29,13 @@ module Queries
 
     attr_reader :seed
 
+    # @rbs return: URI::Generic
     def uri
       @uri ||= URI.parse(ENV['CALCULATION_API'])
     end
 
+    # @rbs n: Integer
+    # @rbs return: Integer
     def ask_server(n)
       params    = { seed:, n: }
       uri.query = URI.encode_www_form(params)
