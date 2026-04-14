@@ -36,6 +36,8 @@ jobs:
       # change this to (see https://github.com/ruby/setup-ruby#versioning):
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
+      - name: Install Gems
+        run: gem install rubocop rubocop-minitest rubocop-performance
       - name: Run Minitest
         env:
           CALCULATION_API: ${{ vars.CALCULATION_API }}
@@ -44,3 +46,6 @@ jobs:
           echo 'export CALCULATION_API=$CALCULATION_API' >> ~/.bash_profile
           source ~/.bash_profile
           rake
+      - name: Run RuboCop
+        working-directory: ./ruby
+        run: rubocop
