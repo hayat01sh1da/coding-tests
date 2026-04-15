@@ -9,6 +9,7 @@ target :app do
   signature 'sig'
 
   library 'json'
+  library 'minitest'
   library 'net-http'
 
   configure_code_diagnostics(D::Ruby.default)
