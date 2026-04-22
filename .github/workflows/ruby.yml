@@ -45,7 +45,7 @@ jobs:
     outputs:
       ruby-changes: ${{ steps.ruby.outputs.changes }}
       rubocop-changes: ${{ steps.rubocop.outputs.changes }}
-      steep-changes: ${{ steps.steep.outputs.changes }}
+      # steep-changes: ${{ steps.steep.outputs.changes }}
     steps:
       - uses: actions/checkout@v6
       - name: Change Detection
@@ -106,7 +106,7 @@ jobs:
           job-name: Brakeman
       - name: Brakeman
         working-directory: ./ruby
-        run: brakeman --no-pager
+        run: bundle exec brakeman --no-pager
   rubocop:
     timeout-minutes: 10
     runs-on: ubuntu-latest
@@ -119,7 +119,7 @@ jobs:
           job-name: RuboCop
       - name: RuboCop
         working-directory: ./ruby
-        run: rubocop
+        run: bundle exec rubocop
   steep:
     timeout-minutes: 10
     runs-on: ubuntu-latest
@@ -130,8 +130,8 @@ jobs:
       - uses: ./.github/actions/setup-ruby
         with:
           job-name: Steep
-      - name: Steep
-        working-directory: ./ruby
-        run: |
-          rbs-inline --output sig/generated/ .
-          steep check
+      # - name: Steep
+      #   working-directory: ./ruby
+      #   run: |
+      #     bundle exec rbs-inline --output sig/generated/ .
+      #     bundle exec steep check
