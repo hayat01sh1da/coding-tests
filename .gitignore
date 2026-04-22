@@ -1,3 +1,6 @@
+# Ruby
+ruby/vendor/bundle/**
+
 # Python
 python/**/__pycache__/
 
