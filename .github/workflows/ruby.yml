@@ -89,6 +89,8 @@ jobs:
         with:
           job-name: Minitest
       - name: Minitest
+        env:
+          CALCULATION_API: ${{ vars.CALCULATION_API }}
         working-directory: ./ruby
         run: |
           echo 'export CALCULATION_API=$CALCULATION_API' >> ~/.bash_profile
