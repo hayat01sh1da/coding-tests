@@ -1,3 +1,5 @@
+# rbs_inline: enabled
+
 require_relative './src/application'
 
 str_1     = 'hogefoobar'

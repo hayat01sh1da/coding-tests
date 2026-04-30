@@ -1,3 +1,5 @@
+# rbs_inline: enabled
+
 require_relative './src/fizzbuzz'
 
 result_1 = Array.new

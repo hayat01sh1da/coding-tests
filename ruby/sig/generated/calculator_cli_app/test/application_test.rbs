@@ -1,0 +1,11 @@
+# Generated from calculator_cli_app/test/application_test.rb with RBS::Inline
+
+class CalculatorCliApp::ApplicationTest < Minitest::Test
+  def setup: () -> untyped
+
+  def test_run_success: () -> untyped
+
+  private
+
+  attr_reader app: untyped
+end

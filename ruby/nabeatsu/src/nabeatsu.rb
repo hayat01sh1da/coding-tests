@@ -1,3 +1,7 @@
+# rbs_inline: enabled
+
+# @rbs num: Integer
+# @rbs return: String
 def go_crazy_in_if(num)
   if num % 3 == 0 || num.to_s.include?('3')
     # Express the status of "crazy" with '!'
@@ -7,6 +11,8 @@ def go_crazy_in_if(num)
   end
 end
 
+# @rbs num: Integer
+# @rbs return: String
 def go_crazy_in_ternary(num)
   # Express the status of "crazy" with '!'
   num % 3 == 0 || num.to_s.include?('3') ? "#{num.to_s}!" : num.to_s

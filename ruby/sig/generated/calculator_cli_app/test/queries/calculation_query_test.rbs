@@ -1,0 +1,21 @@
+# Generated from calculator_cli_app/test/queries/calculation_query_test.rb with RBS::Inline
+
+class CalculationQueryTest < Minitest::Test
+  def setup: () -> untyped
+
+  private
+
+  attr_reader calculation_query: untyped
+end
+
+class ArgumentZeroTest < CalculationQueryTest
+  def test_f: () -> untyped
+end
+
+class ArgumentTwoTest < CalculationQueryTest
+  def test_f: () -> untyped
+end
+
+class ArgumentFourTest < CalculationQueryTest
+  def test_f: () -> untyped
+end

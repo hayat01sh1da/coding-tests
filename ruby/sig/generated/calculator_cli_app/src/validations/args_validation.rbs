@@ -1,0 +1,11 @@
+# Generated from calculator_cli_app/src/validations/args_validation.rb with RBS::Inline
+
+module Validations
+  module ArgsValidation
+    # @rbs args_size: Integer
+    # @rbs seed: String
+    # @rbs n: Integer?
+    # @rbs return: void
+    def validate!: (Integer args_size, String seed, Integer? n) -> void
+  end
+end

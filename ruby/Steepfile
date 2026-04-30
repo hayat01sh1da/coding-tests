@@ -1,0 +1,16 @@
+D = Steep::Diagnostic
+
+target :app do
+  check 'calculator_cli_app'
+  check 'fibonacci_sequence'
+  check 'fizzbuzz'
+  check 'letter_inspection'
+  check 'nabeatsu'
+  signature 'sig'
+
+  library 'json'
+  library 'minitest'
+  library 'net-http'
+
+  configure_code_diagnostics(D::Ruby.default)
+end

@@ -1,0 +1,7 @@
+# Generated from nabeatsu/test/nabeatsu_test.rb with RBS::Inline
+
+class NabeatsuTest < Minitest::Test
+  def test_go_crazy_in_if_statement: () -> untyped
+
+  def test_go_crazy_in_ternary_statement: () -> untyped
+end

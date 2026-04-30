@@ -1,0 +1,25 @@
+# Generated from calculator_cli_app/src/application.rb with RBS::Inline
+
+module CalculatorCliApp
+  class Application
+    include ::Validations::ArgsValidation
+
+    # @rbs args: Array[String]
+    # @rbs return: void
+    def initialize: (Array[String] args) -> void
+
+    # @rbs return: void
+    def run: () -> void
+
+    private
+
+    attr_reader args_size: untyped
+
+    attr_reader seed: untyped
+
+    attr_reader n: untyped
+
+    # @rbs return: Queries::CalculationQuery
+    def calculation_query: () -> Queries::CalculationQuery
+  end
+end

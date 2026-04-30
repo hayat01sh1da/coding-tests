@@ -1,0 +1,9 @@
+# Generated from letter_inspection/test/application_test.rb with RBS::Inline
+
+class LetterInspection::ApplicationTest < Minitest::Test
+  def test_exactly_equal_size_and_included: () -> untyped
+
+  def test_partly_equal_size_and_included: () -> untyped
+
+  def test_not_equal_size_and_included: () -> untyped
+end
