@@ -7,16 +7,16 @@ sys.path.append('./src')
 from nabeatsu import *
 
 class TestNabeatsu(unittest.TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.pycaches = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         for pycache in self.pycaches:
             if os.path.exists(pycache):
                 shutil.rmtree(pycache)
 
 class TestIfStatement(TestNabeatsu):
-    def test_go_crazy(self):
+    def test_go_crazy(self) -> None:
         for num in range(1, 41):
             if num % 3 == 0 or '3' in str(num):
                 self.assertEqual(go_crazy_in_if(num), str(num) + '!')
@@ -24,7 +24,7 @@ class TestIfStatement(TestNabeatsu):
                 self.assertEqual(go_crazy_in_if(num), str(num))
 
 class TestTernaryStatement(TestNabeatsu):
-    def test_go_crazy(self):
+    def test_go_crazy(self) -> None:
         for num in range(1, 41):
             if num % 3 == 0 or '3' in str(num):
                 self.assertEqual(go_crazy_in_ternary(num), str(num) + '!')

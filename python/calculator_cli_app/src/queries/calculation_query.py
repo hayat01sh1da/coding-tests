@@ -3,11 +3,11 @@ import os
 import json
 
 class CalculationQuery:
-    def __init__(self, seed):
+    def __init__(self, seed: str) -> None:
         self.seed = seed
         self.uri  = os.environ['CALCULATION_API']
 
-    def f(self, n):
+    def f(self, n: int) -> int:
         if n == 0:
             return 1
         elif n == 2:
@@ -19,7 +19,7 @@ class CalculationQuery:
 
   # private
 
-    def __ask_server__(self, n):
+    def __ask_server__(self, n: int) -> int:
         params = { 'seed': self.seed, 'n': n }
         req    = urllib.request.Request('{}?{}'.format(self.uri, urllib.parse.urlencode(params)))
         res    = urllib.request.urlopen(req)

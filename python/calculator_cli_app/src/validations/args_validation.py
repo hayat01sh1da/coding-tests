@@ -1,4 +1,7 @@
-def __validate__(args_size, seed, n):
+from __future__ import annotations
+
+
+def __validate__(args_size: int, seed: str, n: int | str) -> None:
     if args_size > 2:
         print('Too many arguments')
         exit(1)
