@@ -88,4 +88,6 @@ jobs:
       - uses: ./.github/actions/setup-python
       - name: mypy
         working-directory: ./python
-        run: mypy .
+        env:
+          MYPYPATH: src
+        run: mypy --namespace-packages --explicit-package-bases .
