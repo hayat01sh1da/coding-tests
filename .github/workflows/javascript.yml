@@ -25,7 +25,24 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  change-detection:
+    runs-on: ubuntu-latest
+    outputs:
+      javascript-changes: ${{ steps.change-detection.outputs.javascript }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Change Detection
+        uses: dorny/paths-filter@v4
+        id: change-detection
+        with:
+          filters: |
+            javascript:
+              - .github/workflows/javascript.yml
+              - .node-version
+              - javascript/package.json
+              - javascript/pnpm-lock.yaml
+              - javascript/pnpm-workspace.yaml
+              - javascript/**/*.js
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
