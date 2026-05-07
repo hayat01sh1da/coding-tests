@@ -9,6 +9,8 @@ def fizzbuzz_in_if(num):
         result = str(num)
     return result
 
+
 def fizzbuzz_in_ternary(num):
-    result = 'FizzBuzz' if num % 3 == 0 and num % 5 == 0 else 'Fizz' if num % 3 == 0 else 'Buzz' if num % 5 == 0 else str(num)
+    result = 'FizzBuzz' if num % 3 == 0 and num % 5 == 0 else 'Fizz' if num % 3 == 0 else 'Buzz' if num % 5 == 0 else str(
+        num)
     return result
