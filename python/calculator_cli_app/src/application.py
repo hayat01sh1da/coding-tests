@@ -1,8 +1,3 @@
-import sys
-sys.path.append('./calculator_cli_app/src')
-sys.path.append('./calculator_cli_app/src/lib')
-sys.path.append('./calculator_cli_app/src/queries')
-sys.path.append('./calculator_cli_app/src/validations')
 from data_type_conversion import __to_int_with_rescue__
 from calculation_query import CalculationQuery
 from args_validation import __validate__

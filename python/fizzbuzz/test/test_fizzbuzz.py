@@ -3,7 +3,14 @@ import sys
 import glob
 import os
 import shutil
-sys.path.append('./src')
+
+# Add src path relative to this test file's location
+test_dir    = os.path.dirname(os.path.abspath(__file__))
+module_root = os.path.dirname(test_dir)
+src_path    = os.path.join(module_root, 'src')
+if src_path not in sys.path:
+    sys.path.insert(0, src_path)
+
 from fizzbuzz import *
 
 class TestFizzBuzz(unittest.TestCase):

@@ -1,7 +1,23 @@
 import unittest
+import sys
 import glob
 import os
 import shutil
+import importlib
+
+# Add src path relative to this test file's location
+test_dir = os.path.dirname(os.path.abspath(__file__))
+module_root = os.path.dirname(test_dir)
+src_path = os.path.join(module_root, 'src')
+
+# Remove cached modules to ensure fresh import
+for mod in list(sys.modules.keys()):
+    if mod == 'application':
+        del sys.modules[mod]
+
+if src_path not in sys.path:
+    sys.path.insert(0, src_path)
+
 from application import Application
 
 class TestApplication(unittest.TestCase):
@@ -13,9 +29,7 @@ class TestApplication(unittest.TestCase):
         self.pattern_1 = Application(str_1 = str_1, str_2 = str_2)
         self.pattern_2 = Application(str_1 = str_1, str_2 = str_3)
         self.pattern_3 = Application(str_1 = str_1, str_2 = str_4)
-        test_dir       = os.path.dirname(os.path.abspath(__file__))
-        module_root    = os.path.dirname(test_dir)
-        self.pycaches  = glob.glob(os.path.join(module_root, '**', '__pycache__'), recursive = True)
+        self.pycaches  = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
 
     def tearDown(self):
         for pycache in self.pycaches:

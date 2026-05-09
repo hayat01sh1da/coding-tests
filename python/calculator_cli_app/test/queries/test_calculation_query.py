@@ -4,7 +4,18 @@ from io import StringIO
 import glob
 import os
 import shutil
-sys.path.append('./src/queries')
+
+# Add src paths relative to this test file's location
+test_dir    = os.path.dirname(os.path.abspath(__file__))
+module_root = os.path.dirname(os.path.dirname(test_dir))
+src_paths   = [
+    os.path.join(module_root, 'src', 'queries'),
+    os.path.join(module_root, 'src')
+]
+for src_path in src_paths:
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+
 from calculation_query import CalculationQuery
 
 class TestCalculationQuery(unittest.TestCase):

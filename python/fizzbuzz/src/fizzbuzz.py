@@ -1,3 +1,5 @@
+__all__ = ['fizzbuzz_in_if', 'fizzbuzz_in_ternary']
+
 def fizzbuzz_in_if(num):
     if num % 3 == 0 and num % 5 == 0:
         result = 'FizzBuzz'
