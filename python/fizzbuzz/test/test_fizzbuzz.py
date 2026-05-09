@@ -1,10 +1,10 @@
-from fizzbuzz import *
 import unittest
 import sys
 import glob
 import os
 import shutil
 sys.path.append('./src')
+from fizzbuzz import *
 
 
 class TestFizzBuzz(unittest.TestCase):

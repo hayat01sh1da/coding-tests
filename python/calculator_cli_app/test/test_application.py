@@ -1,4 +1,3 @@
-from application import Application
 import unittest
 import sys
 from io import StringIO
@@ -9,6 +8,7 @@ sys.path.append('./src')
 sys.path.append('./src/lib')
 sys.path.append('./src/queries')
 sys.path.append('./src/validations')
+from application import Application
 
 
 class TestApplication(unittest.TestCase):

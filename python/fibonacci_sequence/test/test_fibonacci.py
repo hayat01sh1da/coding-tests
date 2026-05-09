@@ -1,10 +1,10 @@
-from fibonacci import *
 import unittest
 import sys
 import glob
 import os
 import shutil
 sys.path.append('./src')
+from fibonacci import *
 
 
 class TestFibonacci(unittest.TestCase):

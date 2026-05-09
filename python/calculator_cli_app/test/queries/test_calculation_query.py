@@ -1,4 +1,3 @@
-from calculation_query import CalculationQuery
 import unittest
 import sys
 from io import StringIO
@@ -6,6 +5,7 @@ import glob
 import os
 import shutil
 sys.path.append('./src/queries')
+from calculation_query import CalculationQuery
 
 
 class TestCalculationQuery(unittest.TestCase):

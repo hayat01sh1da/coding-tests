@@ -1,10 +1,10 @@
-from application import Application
 import unittest
 import sys
 import glob
 import os
 import shutil
 sys.path.append('./src')
+from application import Application
 
 
 class TestApplication(unittest.TestCase):

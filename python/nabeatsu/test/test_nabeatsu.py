@@ -1,10 +1,10 @@
-from nabeatsu import *
 import unittest
 import sys
 import glob
 import os
 import shutil
 sys.path.append('./src')
+from nabeatsu import *
 
 
 class TestNabeatsu(unittest.TestCase):
