@@ -4,7 +4,9 @@ class Application:
         self.str_2 = str_2
 
     def exactly_equal_size_and_included(self) -> bool:
-        return self.__sort_string__(self.str_1) == self.__sort_string__(self.str_2)
+        return self.__sort_string__(
+            self.str_1) == self.__sort_string__(
+            self.str_2)
 
     # private
 

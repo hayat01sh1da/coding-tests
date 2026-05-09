@@ -11,6 +11,6 @@ def __validate__(args_size: int, seed: str, n: int | str) -> None:
     elif args_size == 1:
         print('Provide both seed and n')
         exit(1)
-    elif type(seed) != str or n == 'Not Integer':
+    elif not isinstance(seed, str) or n == 'Not Integer':
         print('Provide seed as string and n as number')
         exit(1)

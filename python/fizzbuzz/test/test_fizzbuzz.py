@@ -6,14 +6,21 @@ import shutil
 sys.path.append('./src')
 from fizzbuzz import *
 
+
 class TestFizzBuzz(unittest.TestCase):
     def setUp(self) -> None:
-        self.pycaches = glob.glob(os.path.join('.', '**', '__pycache__'), recursive = True)
+        self.pycaches = glob.glob(
+            os.path.join(
+                '.',
+                '**',
+                '__pycache__'),
+            recursive=True)
 
     def tearDown(self) -> None:
         for pycache in self.pycaches:
             if os.path.exists(pycache):
                 shutil.rmtree(pycache)
+
 
 class TestIfStatement(TestFizzBuzz):
     def test_fizzbuzz(self) -> None:
@@ -27,6 +34,7 @@ class TestIfStatement(TestFizzBuzz):
             else:
                 self.assertEqual(fizzbuzz_in_if(num), str(num))
 
+
 class TestTernaryStatement(TestFizzBuzz):
     def test_fizzbuzz(self) -> None:
         for num in range(1, 101):
@@ -38,6 +46,7 @@ class TestTernaryStatement(TestFizzBuzz):
                 self.assertEqual(fizzbuzz_in_ternary(num), 'Buzz')
             else:
                 self.assertEqual(fizzbuzz_in_ternary(num), str(num))
+
 
 if __name__ == '__main__':
     unittest.main()
