@@ -1,5 +1,6 @@
 __all__ = ['go_crazy_in_if', 'go_crazy_in_ternary']
 
+
 def go_crazy_in_if(num):
     if num % 3 == 0 or '3' in str(num):
         # Express the status of 'crazy' with '!'
@@ -7,6 +8,7 @@ def go_crazy_in_if(num):
     else:
         result = str(num)
     return result
+
 
 def go_crazy_in_ternary(num):
     # Express the status of 'crazy' with '!'
