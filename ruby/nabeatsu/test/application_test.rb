@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative '../src/application'
 
-class NabeatsuTest < Minitest::Test
+class ApplicationTest < Minitest::Test
   def test_go_crazy_in_if_statement
     1.upto(40).each do |num|
       if (num % 3).zero? || num.to_s.include?('3')

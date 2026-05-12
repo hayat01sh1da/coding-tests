@@ -1,9 +1,9 @@
 require 'minitest/autorun'
 require_relative '../src/application'
 
-class FizzBuzzTest < Minitest::Test; end
+class ApplicationTest < Minitest::Test; end
 
-class IfStatementTest < FizzBuzzTest
+class IfStatementTest < ApplicationTest
   def test_fizzbuzz
     1.upto(100).each do |num|
       if (num % 3).zero? && (num % 5).zero?
@@ -19,7 +19,7 @@ class IfStatementTest < FizzBuzzTest
   end
 end
 
-class TernaryStatementTest < FizzBuzzTest
+class TernaryStatementTest < ApplicationTest
   def test_fizzbuzz
     1.upto(100).each do |num|
       if (num % 3).zero? && (num % 5).zero?
@@ -35,7 +35,7 @@ class TernaryStatementTest < FizzBuzzTest
   end
 end
 
-class HybridStatementTest < FizzBuzzTest
+class HybridStatementTest < ApplicationTest
   def test_fizzbuzz
     1.upto(100).each do |num|
       if (num % 3).zero? && (num % 5).zero?

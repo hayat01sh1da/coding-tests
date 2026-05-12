@@ -1,9 +1,9 @@
 require 'minitest/autorun'
 require_relative '../src/application'
 
-class FibonacciTest < Minitest::Test; end
+class ApplicationTest < Minitest::Test; end
 
-class TestCase1 < FibonacciTest
+class TestCase1 < ApplicationTest
   def test_fibonacci
     assert_equal(
       [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
@@ -12,7 +12,7 @@ class TestCase1 < FibonacciTest
   end
 end
 
-class TestCase2 < FibonacciTest
+class TestCase2 < ApplicationTest
   def test_fibonacci
     assert_equal(
       [10, 11, 21, 32, 53, 85, 138, 223, 361, 584],
