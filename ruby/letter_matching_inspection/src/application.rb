@@ -1,18 +1,18 @@
 # rbs_inline: enabled
 
-module LetterInspection
+module LetterMatchingInspection
   class Application
     # @rbs source: String
     # @rbs target: String
     # @rbs return: bool
     def self.exactly_equal_size_and_included?(source:, target:)
-      new(source, target).exactly_equal_size_and_included?
+      new(source:, target:).exactly_equal_size_and_included?
     end
 
     # @rbs source: String
     # @rbs target: String
     # @rbs return: void
-    def initialize(source, target)
+    def initialize(source:, target:)
       @source = source
       @target = target
     end
@@ -29,7 +29,7 @@ module LetterInspection
     # @rbs str: String
     # @rbs return: String
     def sort_string(str)
-      str.split('').sort.join('')
+      str.chars.sort.join
     end
   end
 end

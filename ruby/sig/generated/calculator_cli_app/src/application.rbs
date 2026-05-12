@@ -6,10 +6,14 @@ module CalculatorCliApp
 
     # @rbs args: Array[String]
     # @rbs return: void
+    def self.run!: (Array[String] args) -> void
+
+    # @rbs args: Array[String]
+    # @rbs return: void
     def initialize: (Array[String] args) -> void
 
     # @rbs return: void
-    def run: () -> void
+    def run!: () -> void
 
     private
 

@@ -1,0 +1,12 @@
+# Generated from fibonacci_sequence/test/application_test.rb with RBS::Inline
+
+class ApplicationTest < Minitest::Test
+end
+
+class TestCase1 < ApplicationTest
+  def test_fibonacci: () -> untyped
+end
+
+class TestCase2 < ApplicationTest
+  def test_fibonacci: () -> untyped
+end

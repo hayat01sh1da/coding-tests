@@ -9,6 +9,12 @@ module CalculatorCliApp
 
     # @rbs args: Array[String]
     # @rbs return: void
+    def self.run!(args)
+      new(args).run!
+    end
+
+    # @rbs args: Array[String]
+    # @rbs return: void
     def initialize(args)
       @args_size = args.length
       @seed      = args.first
@@ -16,7 +22,7 @@ module CalculatorCliApp
     end
 
     # @rbs return: void
-    def run
+    def run!
       validate!(args_size, seed, n.to_i.nonzero?)
 
       result = calculation_query.f(n)

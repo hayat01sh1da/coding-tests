@@ -1,0 +1,16 @@
+# Generated from fizzbuzz/test/application_test.rb with RBS::Inline
+
+class ApplicationTest < Minitest::Test
+end
+
+class IfStatementTest < ApplicationTest
+  def test_fizzbuzz: () -> untyped
+end
+
+class TernaryStatementTest < ApplicationTest
+  def test_fizzbuzz: () -> untyped
+end
+
+class HybridStatementTest < ApplicationTest
+  def test_fizzbuzz: () -> untyped
+end

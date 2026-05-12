@@ -7,5 +7,5 @@ class CalculatorCliApp::ApplicationTest < Minitest::Test
 
   private
 
-  attr_reader app: untyped
+  attr_reader argv: untyped
 end

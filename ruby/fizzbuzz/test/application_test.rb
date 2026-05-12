@@ -1,18 +1,18 @@
 # rbs_inline: enabled
 
 require 'minitest/autorun'
-require_relative '../src/fizzbuzz'
+require_relative '../src/application'
 
-class FizzBuzzTest < Minitest::Test; end
+class ApplicationTest < Minitest::Test; end
 
-class IfStatementTest < FizzBuzzTest
+class IfStatementTest < ApplicationTest
   def test_fizzbuzz
     1.upto(100).each do |num|
-      if num % 3 == 0 && num % 5 == 0
+      if (num % 3).zero? && (num % 5).zero?
         assert_equal 'FizzBuzz', fizzbuzz_in_if(num)
-      elsif num % 3 == 0
+      elsif (num % 3).zero?
         assert_equal 'Fizz', fizzbuzz_in_if(num)
-      elsif num % 5 == 0
+      elsif (num % 5).zero?
         assert_equal 'Buzz', fizzbuzz_in_if(num)
       else
         assert_equal num.to_s, fizzbuzz_in_if(num)
@@ -21,14 +21,14 @@ class IfStatementTest < FizzBuzzTest
   end
 end
 
-class TernaryStatementTest < FizzBuzzTest
+class TernaryStatementTest < ApplicationTest
   def test_fizzbuzz
     1.upto(100).each do |num|
-      if num % 3 == 0 && num % 5 == 0
+      if (num % 3).zero? && (num % 5).zero?
         assert_equal 'FizzBuzz', fizzbuzz_in_ternary(num)
-      elsif num % 3 == 0
+      elsif (num % 3).zero?
         assert_equal 'Fizz', fizzbuzz_in_ternary(num)
-      elsif num % 5 == 0
+      elsif (num % 5).zero?
         assert_equal 'Buzz', fizzbuzz_in_ternary(num)
       else
         assert_equal num.to_s, fizzbuzz_in_ternary(num)
@@ -37,14 +37,14 @@ class TernaryStatementTest < FizzBuzzTest
   end
 end
 
-class HybridStatementTest < FizzBuzzTest
+class HybridStatementTest < ApplicationTest
   def test_fizzbuzz
     1.upto(100).each do |num|
-      if num % 3 == 0 && num % 5 == 0
+      if (num % 3).zero? && (num % 5).zero?
         assert_equal 'FizzBuzz', fizzbuzz_in_if_and_ternary(num)
-      elsif num % 3 == 0
+      elsif (num % 3).zero?
         assert_equal 'Fizz', fizzbuzz_in_if_and_ternary(num)
-      elsif num % 5 == 0
+      elsif (num % 5).zero?
         assert_equal 'Buzz', fizzbuzz_in_if_and_ternary(num)
       else
         assert_equal num.to_s, fizzbuzz_in_if_and_ternary(num)
