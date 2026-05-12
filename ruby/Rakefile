@@ -5,6 +5,7 @@ require_relative 'calculator_cli_app/src/application'
 require_relative 'fibonacci_sequence/src/application'
 require_relative 'fizzbuzz/src/application'
 require_relative 'letter_matching_inspection/src/application'
+require_relative 'nabeatsu/src/application'
 
 task default: :test
 
@@ -64,6 +65,33 @@ Rake::Task.define_task(:print_letter_matching_inspection) do
 
   params = { source:, target: }.reject { |_, value| value&.empty? }
   puts "Result: #{::LetterMatchingInspection::Application.exactly_equal_size_and_included?(**params)}"
+end
+
+desc 'Print nabeatsu sequence'
+Rake::Task.define_task(:print_nabeatsu_sequence) do
+  puts 'Provide the initial number to start the sequence from'
+  init_num = $stdin.gets&.chomp&.strip
+
+  puts 'Provide the terminal number of stop the sequence at'
+  terminal_num = $stdin.gets&.chomp&.strip
+
+  puts 'Which logic do you want to use? (1: if, 2: ternary)'
+  logic_type = $stdin.gets&.chomp&.strip
+
+  params = ({ init_num:, terminal_num:, logic_type: }.reject { |_, value| value&.empty? }.map { |_, value| [_, value.to_i] }.to_h)
+  init_num, terminal_num, logic_type = params.values_at(:init_num, :terminal_num, :logic_type)
+
+  result = init_num.upto(terminal_num).map { |num|
+    if logic_type == 1
+      go_crazy_in_if(num)
+    elsif logic_type == 2
+      go_crazy_in_ternary(num)
+    else
+      num
+    end
+  }
+
+  puts result.join(', ')
 end
 
 desc 'Run all tests'

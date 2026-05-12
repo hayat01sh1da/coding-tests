@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../src/nabeatsu'
+require_relative '../src/application'
 
 class NabeatsuTest < Minitest::Test
   def test_go_crazy_in_if_statement
