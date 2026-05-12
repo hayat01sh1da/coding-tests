@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../src/fizzbuzz'
+require_relative '../src/application'
 
 class FizzBuzzTest < Minitest::Test; end
 
