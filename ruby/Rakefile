@@ -4,6 +4,7 @@ require 'rake/testtask'
 require_relative 'calculator_cli_app/src/application'
 require_relative 'fibonacci_sequence/src/application'
 require_relative 'fizzbuzz/src/application'
+require_relative 'letter_matching_inspection/src/application'
 
 task default: :test
 
@@ -51,6 +52,18 @@ Rake::Task.define_task(:print_fizzbuzz_sequence) do
   }
 
   puts result.join(', ')
+end
+
+desc 'Print the result of letter matching inspection'
+Rake::Task.define_task(:print_letter_matching_inspection) do
+  puts 'Provide the source string to compare from'
+  source = $stdin.gets&.chomp&.strip
+
+  puts 'Provide the target string to compare with'
+  target = $stdin.gets&.chomp&.strip
+
+  params = { source:, target: }.reject { |_, value| value&.empty? }
+  puts "Result: #{::LetterMatchingInspection::Application.exactly_equal_size_and_included?(**params)}"
 end
 
 desc 'Run all tests'
