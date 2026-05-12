@@ -5,13 +5,17 @@ module CalculatorCliApp
   class Application
     include ::Validations::ArgsValidation
 
+    def self.run!(args)
+      new(args).run!
+    end
+
     def initialize(args)
       @args_size = args.length
       @seed      = args.first
       @n         = args.last
     end
 
-    def run
+    def run!
       validate!(args_size, seed, n.to_i.nonzero?)
 
       result = calculation_query.f(n)
