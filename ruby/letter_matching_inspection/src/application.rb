@@ -1,10 +1,10 @@
-module LetterInspection
+module LetterMatchingInspection
   class Application
     def self.exactly_equal_size_and_included?(source:, target:)
-      new(source, target).exactly_equal_size_and_included?
+      new(source:, target:).exactly_equal_size_and_included?
     end
 
-    def initialize(source, target)
+    def initialize(source:, target:)
       @source = source
       @target = target
     end
@@ -18,7 +18,7 @@ module LetterInspection
     attr_reader :source, :target
 
     def sort_string(str)
-      str.split('').sort.join('')
+      str.chars.sort.join
     end
   end
 end
