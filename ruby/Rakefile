@@ -22,7 +22,7 @@ Rake::Task.define_task(:print_fibonacci_sequence) do
   puts 'Provide the number of iterations'
   iter = $stdin.gets&.chomp&.strip
 
-  params = { init_num:, iter: }.reject { |_, value| value&.empty? }.map { |_, value| [_, value.to_i] }.to_h
+  params = { init_num:, iter: }.reject { |_, value| value&.empty? }.to_h { |_, value| [_, value.to_i] }
   puts fibonacci(**params).join(', ')
 end
 
@@ -37,20 +37,23 @@ Rake::Task.define_task(:print_fizzbuzz_sequence) do
   puts 'Which logic do you want to use? (1: if, 2: if and ternary, 3: ternary)'
   logic_type = $stdin.gets&.chomp&.strip
 
-  params = ({ init_num:, terminal_num:, logic_type: }.reject { |_, value| value&.empty? }.map { |_, value| [_, value.to_i] }.to_h)
+  params = { init_num:, terminal_num:, logic_type: }.reject do |_, value|
+    value&.empty?
+  end.to_h { |_, value| [_, value.to_i] }
   init_num, terminal_num, logic_type = params.values_at(:init_num, :terminal_num, :logic_type)
 
-  result = init_num.upto(terminal_num).map { |num|
-    if logic_type == 1
+  result = init_num.upto(terminal_num).map do |num|
+    case logic_type
+    when 1
       fizzbuzz_in_if(num)
-    elsif logic_type == 2
+    when 2
       fizzbuzz_in_if_and_ternary(num)
-    elsif logic_type == 3
+    when 3
       fizzbuzz_in_ternary(num)
     else
       num
     end
-  }
+  end
 
   puts result.join(', ')
 end
@@ -64,7 +67,7 @@ Rake::Task.define_task(:print_letter_matching_inspection) do
   target = $stdin.gets&.chomp&.strip
 
   params = { source:, target: }.reject { |_, value| value&.empty? }
-  puts "Result: #{::LetterMatchingInspection::Application.exactly_equal_size_and_included?(**params)}"
+  puts "Result: #{LetterMatchingInspection::Application.exactly_equal_size_and_included?(**params)}"
 end
 
 desc 'Print nabeatsu sequence'
@@ -78,10 +81,12 @@ Rake::Task.define_task(:print_nabeatsu_sequence) do
   puts 'Which logic do you want to use? (1: if, 2: ternary)'
   logic_type = $stdin.gets&.chomp&.strip
 
-  params = ({ init_num:, terminal_num:, logic_type: }.reject { |_, value| value&.empty? }.map { |_, value| [_, value.to_i] }.to_h)
+  params = { init_num:, terminal_num:, logic_type: }.reject do |_, value|
+    value&.empty?
+  end.to_h { |_, value| [_, value.to_i] }
   init_num, terminal_num, logic_type = params.values_at(:init_num, :terminal_num, :logic_type)
 
-  result = init_num.upto(terminal_num).map { |num|
+  result = init_num.upto(terminal_num).map do |num|
     if logic_type == 1
       go_crazy_in_if(num)
     elsif logic_type == 2
@@ -89,7 +94,7 @@ Rake::Task.define_task(:print_nabeatsu_sequence) do
     else
       num
     end
-  }
+  end
 
   puts result.join(', ')
 end

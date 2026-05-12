@@ -1,9 +1,9 @@
 def fizzbuzz_in_if(num)
-  if num % 3 == 0 && num % 5 == 0
+  if (num % 3).zero? && (num % 5).zero?
     'FizzBuzz'
-  elsif num % 3 == 0
+  elsif (num % 3).zero?
     'Fizz'
-  elsif num % 5 == 0
+  elsif (num % 5).zero?
     'Buzz'
   else
     num.to_s
@@ -11,13 +11,17 @@ def fizzbuzz_in_if(num)
 end
 
 def fizzbuzz_in_if_and_ternary(num)
-  if num % 3 == 0
-    num % 5 == 0 ? 'FizzBuzz' : 'Fizz'
+  if (num % 3).zero?
+    (num % 5).zero? ? 'FizzBuzz' : 'Fizz'
   else
-    num % 5 == 0 ? 'Buzz' : num.to_s
+    (num % 5).zero? ? 'Buzz' : num.to_s
   end
 end
 
 def fizzbuzz_in_ternary(num)
-  num % 3 == 0 ? (num % 5 == 0 ? 'FizzBuzz' : 'Fizz') : num % 5 == 0 ? 'Buzz' : num.to_s
+  if (num % 3).zero?
+    (num % 5).zero? ? 'FizzBuzz' : 'Fizz'
+  else
+    (num % 5).zero? ? 'Buzz' : num.to_s
+  end
 end

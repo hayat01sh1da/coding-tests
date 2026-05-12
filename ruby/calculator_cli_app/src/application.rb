@@ -4,6 +4,7 @@ require_relative './validations/args_validation'
 module CalculatorCliApp
   class Application
     include ::Validations::ArgsValidation
+
     def self.run!(args)
       new(args).run!
     end

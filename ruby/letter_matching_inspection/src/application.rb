@@ -18,7 +18,7 @@ module LetterMatchingInspection
     attr_reader :source, :target
 
     def sort_string(str)
-      str.split('').sort.join('')
+      str.chars.sort.join
     end
   end
 end
