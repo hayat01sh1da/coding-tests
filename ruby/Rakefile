@@ -1,8 +1,16 @@
 # frozen_string_literal: true
 
 require 'rake/testtask'
+require_relative 'calculator_cli_app/src/application'
+
 task default: :test
 
+desc 'Run CalculatorCliApp::Application'
+Rake::Task.define_task(:run_calculator_cli_app) do
+  CalculatorCliApp::Application.run!(ARGV)
+end
+
+desc 'Run all tests'
 Rake::TestTask.new do |task|
   task.pattern = File.join('.', '**', '*_test.rb')
 end
