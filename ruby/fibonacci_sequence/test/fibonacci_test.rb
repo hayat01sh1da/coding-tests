@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../src/fibonacci'
+require_relative '../src/application'
 
 class FibonacciTest < Minitest::Test; end
 

@@ -2,12 +2,26 @@
 
 require 'rake/testtask'
 require_relative 'calculator_cli_app/src/application'
+require_relative 'fibonacci_sequence/src/application'
 
 task default: :test
 
 desc 'Run CalculatorCliApp::Application'
 Rake::Task.define_task(:run_calculator_cli_app) do
   CalculatorCliApp::Application.run!(ARGV)
+end
+
+desc 'Print fibonacci sequence'
+Rake::Task.define_task(:print_fibonacci_sequence) do
+  puts 'Provide the initial number to start the sequence from'
+  init_num = $stdin.gets&.chomp&.strip
+
+  puts 'Provide the number of iterations'
+  iter = $stdin.gets&.chomp&.strip
+
+  params = { init_num:, iter: }.reject { |_, value| value&.empty? }.map { |_, value| [_, value.to_i] }.to_h
+  puts fibonacci(**params).join(', ')
+end
 end
 
 desc 'Run all tests'
