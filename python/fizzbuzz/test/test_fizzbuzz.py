@@ -1,52 +1,19 @@
-import unittest
-import sys
-import glob
-import os
-import shutil
-sys.path.append('./src')
-from fizzbuzz import *
+import pytest
+
+from fizzbuzz import fizzbuzz_in_if, fizzbuzz_in_ternary
 
 
-class TestFizzBuzz(unittest.TestCase):
-    def setUp(self):
-        self.pycaches = glob.glob(
-            os.path.join(
-                '.',
-                '**',
-                '__pycache__'),
-            recursive=True)
-
-    def tearDown(self):
-        for pycache in self.pycaches:
-            if os.path.exists(pycache):
-                shutil.rmtree(pycache)
+def _expected(num):
+    if num % 3 == 0 and num % 5 == 0:
+        return 'FizzBuzz'
+    if num % 3 == 0:
+        return 'Fizz'
+    if num % 5 == 0:
+        return 'Buzz'
+    return str(num)
 
 
-class TestIfStatement(TestFizzBuzz):
-    def test_fizzbuzz(self):
-        for num in range(1, 101):
-            if num % 3 == 0 and num % 5 == 0:
-                self.assertEqual(fizzbuzz_in_if(num), 'FizzBuzz')
-            elif num % 3 == 0:
-                self.assertEqual(fizzbuzz_in_if(num), 'Fizz')
-            elif num % 5 == 0:
-                self.assertEqual(fizzbuzz_in_if(num), 'Buzz')
-            else:
-                self.assertEqual(fizzbuzz_in_if(num), str(num))
-
-
-class TestTernaryStatement(TestFizzBuzz):
-    def test_fizzbuzz(self):
-        for num in range(1, 101):
-            if num % 3 == 0 and num % 5 == 0:
-                self.assertEqual(fizzbuzz_in_ternary(num), 'FizzBuzz')
-            elif num % 3 == 0:
-                self.assertEqual(fizzbuzz_in_ternary(num), 'Fizz')
-            elif num % 5 == 0:
-                self.assertEqual(fizzbuzz_in_ternary(num), 'Buzz')
-            else:
-                self.assertEqual(fizzbuzz_in_ternary(num), str(num))
-
-
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.parametrize('implementation', [fizzbuzz_in_if, fizzbuzz_in_ternary])
+@pytest.mark.parametrize('num', range(1, 101))
+def test_fizzbuzz(implementation, num):
+    assert implementation(num) == _expected(num)
