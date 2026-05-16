@@ -31,7 +31,7 @@ module Queries
 
     # @rbs return: URI::Generic
     def uri
-      @uri ||= URI.parse(ENV['CALCULATION_API'])
+      @uri ||= URI.parse(ENV.fetch('CALCULATION_API'))
     end
 
     # @rbs n: Integer
@@ -40,7 +40,7 @@ module Queries
       params    = { seed:, n: }
       uri.query = URI.encode_www_form(params)
       req       = Net::HTTP::Get.new(uri)
-      res       = Net::HTTP.start(uri.host, uri.port) { it.request(req) }
+      res       = Net::HTTP.start(uri.host.to_s, uri.port) { |http| http.request(req) }
       JSON.parse(res.body)['result']
     end
   end
