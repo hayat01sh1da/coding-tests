@@ -1,0 +1,24 @@
+# Generated from calculator_cli_app/src/queries/calculation_query.rb with RBS::Inline
+
+module Queries
+  class CalculationQuery
+    # @rbs seed: String
+    # @rbs return: void
+    def initialize: (String seed) -> void
+
+    # @rbs n: Integer
+    # @rbs return: Integer
+    def f: (Integer n) -> Integer
+
+    private
+
+    attr_reader seed: untyped
+
+    # @rbs return: URI::Generic
+    def uri: () -> URI::Generic
+
+    # @rbs n: Integer
+    # @rbs return: Integer
+    def ask_server: (Integer n) -> Integer
+  end
+end

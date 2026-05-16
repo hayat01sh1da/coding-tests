@@ -1,0 +1,24 @@
+# Hand-written signatures for top-level helper methods.
+#
+# rbs-inline 0.13.0 does not emit RBS for top-level `def`s: methods defined
+# outside any class/module become private instance methods of `Object` at
+# runtime, and rbs-inline only generates signatures for class/module-scoped
+# definitions. These are declared here to complement the generated
+# signatures under sig/generated.
+
+class Object
+  # fibonacci_sequence/src/application.rb
+  def fibonacci: (init_num: Integer, iter: Integer) -> Array[Integer]
+
+  # fizzbuzz/src/application.rb
+  def fizzbuzz_in_if: (Integer num) -> String
+
+  def fizzbuzz_in_if_and_ternary: (Integer num) -> String
+
+  def fizzbuzz_in_ternary: (Integer num) -> String
+
+  # nabeatsu/src/application.rb
+  def go_crazy_in_if: (Integer num) -> String
+
+  def go_crazy_in_ternary: (Integer num) -> String
+end
