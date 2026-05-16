@@ -6,10 +6,9 @@
 def fibonacci(init_num:, iter:)
   current_num = init_num
   next_num    = current_num + 1
-  result      = []
-  iter.times do
-    result.push(current_num)
+  iter.times.map do
+    result_num            = current_num
     current_num, next_num = next_num, current_num + next_num
+    result_num
   end
-  result
 end
