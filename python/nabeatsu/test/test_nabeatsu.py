@@ -1,44 +1,13 @@
-import unittest
-import sys
-import glob
-import os
-import shutil
-sys.path.append('./src')
-from nabeatsu import *
+import pytest
+
+from nabeatsu import go_crazy_in_if, go_crazy_in_ternary
 
 
-class TestNabeatsu(unittest.TestCase):
-    def setUp(self) -> None:
-        self.pycaches = glob.glob(
-            os.path.join(
-                '.',
-                '**',
-                '__pycache__'),
-            recursive=True)
-
-    def tearDown(self) -> None:
-        for pycache in self.pycaches:
-            if os.path.exists(pycache):
-                shutil.rmtree(pycache)
+def _expected(num):
+    return f'{num}!' if num % 3 == 0 or '3' in str(num) else str(num)
 
 
-class TestIfStatement(TestNabeatsu):
-    def test_go_crazy(self) -> None:
-        for num in range(1, 41):
-            if num % 3 == 0 or '3' in str(num):
-                self.assertEqual(go_crazy_in_if(num), str(num) + '!')
-            else:
-                self.assertEqual(go_crazy_in_if(num), str(num))
-
-
-class TestTernaryStatement(TestNabeatsu):
-    def test_go_crazy(self) -> None:
-        for num in range(1, 41):
-            if num % 3 == 0 or '3' in str(num):
-                self.assertEqual(go_crazy_in_ternary(num), str(num) + '!')
-            else:
-                self.assertEqual(go_crazy_in_ternary(num), str(num))
-
-
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.parametrize('implementation', [go_crazy_in_if, go_crazy_in_ternary])
+@pytest.mark.parametrize('num', range(1, 41))
+def test_go_crazy(implementation, num):
+    assert implementation(num) == _expected(num)

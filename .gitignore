@@ -1,6 +1,7 @@
 # Python
 python/**/__pycache__/
-python/**/.mypy_cache
+python/**/.pytest_cache/
+python/**/.mypy_cache/
 
 # JavaScript
 javascript/node_modules/
