@@ -1,14 +1,15 @@
 import urllib.request
+import urllib.parse
 import os
 import json
 
 
 class CalculationQuery:
-    def __init__(self, seed):
-        self.seed = seed
-        self.uri = os.environ['CALCULATION_API']
+    def __init__(self, seed: str) -> None:
+        self.seed: str = seed
+        self.uri: str = os.environ['CALCULATION_API']
 
-    def f(self, n):
+    def f(self, n: int) -> int:
         if n == 0:
             return 1
         elif n == 2:
@@ -19,12 +20,12 @@ class CalculationQuery:
         else:
             return self.__ask_server__(n)
 
-  # private
+    # private
 
-    def __ask_server__(self, n):
+    def __ask_server__(self, n: int) -> int:
         params = {'seed': self.seed, 'n': n}
         req = urllib.request.Request('{}?{}'.format(
             self.uri, urllib.parse.urlencode(params)))
         res = urllib.request.urlopen(req)
-        result = json.loads(res.read())['result']
+        result: int = json.loads(res.read())['result']
         return result

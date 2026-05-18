@@ -1,4 +1,4 @@
-from fibonacci import *
+from fibonacci import fibonacci
 import sys
 import os
 import shutil

@@ -1,4 +1,4 @@
-def go_crazy_in_if(num):
+def go_crazy_in_if(num: int) -> str:
     if num % 3 == 0 or '3' in str(num):
         # Express the status of 'crazy' with '!'
         result = str(num) + '!'
@@ -7,7 +7,7 @@ def go_crazy_in_if(num):
     return result
 
 
-def go_crazy_in_ternary(num):
+def go_crazy_in_ternary(num: int) -> str:
     # Express the status of 'crazy' with '!'
     result = str(num) + '!' if num % 3 == 0 or '3' in str(num) else str(num)
     return result

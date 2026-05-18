@@ -10,5 +10,5 @@ from fibonacci import fibonacci
         (10, 10, [10, 11, 21, 32, 53, 85, 138, 223, 361, 584]),
     ],
 )
-def test_fibonacci(start, count, expected):
+def test_fibonacci(start: int, count: int, expected: list[int]) -> None:
     assert fibonacci(start, count) == expected
