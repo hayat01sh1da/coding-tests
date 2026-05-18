@@ -1,4 +1,4 @@
-def fibonacci(init_num, iter):
+def fibonacci(init_num: int, iter: int) -> list[int]:
     current_num = init_num
     next_num = current_num + 1
     result = list()

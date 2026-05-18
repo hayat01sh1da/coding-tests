@@ -1,4 +1,4 @@
-from nabeatsu import *
+from nabeatsu import go_crazy_in_if, go_crazy_in_ternary
 import sys
 import os
 import shutil

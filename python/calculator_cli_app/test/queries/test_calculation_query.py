@@ -11,5 +11,5 @@ from calculation_query import CalculationQuery
         (4, 348),
     ],
 )
-def test_f(argument, expected):
+def test_f(argument: int, expected: int) -> None:
     assert CalculationQuery('foo').f(argument) == expected
