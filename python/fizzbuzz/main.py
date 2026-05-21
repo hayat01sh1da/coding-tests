@@ -1,4 +1,4 @@
-from fizzbuzz import fizzbuzz_in_if, fizzbuzz_in_ternary
+from application import fizzbuzz_in_if, fizzbuzz_in_ternary
 import sys
 import os
 import shutil
