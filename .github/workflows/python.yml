@@ -101,10 +101,9 @@ jobs:
         working-directory: ./python
         run: |
           status=0
-          for directory in $(ls -d */)
+          for directory in ./*/
           do
-            cd $directory
-            mypy . || status=1
-            cd ../
+            echo "===== mypy ${directory} ====="
+            mypy "${directory}" || status=1
           done
           exit "${status}"
