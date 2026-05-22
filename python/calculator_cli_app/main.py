@@ -1,15 +1,12 @@
-from application import Application
-import sys
 import os
-import shutil
-import glob
-sys.path.append('./calculator_cli_app/src')
+import sys
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(_HERE, 'src'))
+sys.path.append(os.path.join(_HERE, 'src', 'queries'))
+sys.path.append(os.path.join(_HERE, 'src', 'validations'))
+
+from application import Application  # noqa: E402
 
 sys.argv.pop(0)
-app = Application(args=sys.argv)
-app.run()
-
-pycaches = glob.glob(os.path.join('.', '**', '__pycache__'), recursive=True)
-for pycache in pycaches:
-    if os.path.exists(pycache):
-        shutil.rmtree(pycache)
+Application.run(args=sys.argv)
