@@ -8,7 +8,7 @@
 | Track / Component    | Version(s) / Tooling               | Notes                                                                           |
 | -------------------- | ---------------------------------- | ------------------------------------------------------------------------------- |
 | OS baseline          | WSL (Ubuntu 25.10)                 | Shared environment across tracks.                                               |
-| Ruby exercises       | Ruby 4.0.4 (`.ruby-version`)       | Bundler-managed gems per kata; default relies on stdlib.                        |
+| Ruby exercises       | Ruby 4.0.5 (`.ruby-version`)       | Bundler-managed gems per kata; default relies on stdlib.                        |
 | Python exercises     | CPython 3.14.5 (`.python-version`) | Requirements are declared per exercise; base templates use stdlib only.         |
 | JavaScript exercises | Node v26.1.0 (`.node-version`)     | Use the Node toolchain plus any dependencies listed inside each `package.json`. |
 
