@@ -79,15 +79,7 @@ jobs:
         env:
           CALCULATION_API: ${{ vars.CALCULATION_API }}
         working-directory: ./python
-        run: |
-          status=0
-          for directory in $(ls -d */)
-          do
-            cd $directory
-            pytest . || status=1
-            cd ../
-          done
-          exit "${status}"
+        run: invoke
 
   mypy:
     timeout-minutes: 10
@@ -101,10 +93,9 @@ jobs:
         working-directory: ./python
         run: |
           status=0
-          for directory in $(ls -d */)
+          for directory in ./*/
           do
-            cd $directory
-            mypy . || status=1
-            cd ../
+            echo "===== mypy ${directory} ====="
+            mypy "${directory}" || status=1
           done
           exit "${status}"

@@ -1,28 +1,35 @@
-from args_validation import __validate__
+from args_validation import ArgsValidation
 from calculation_query import CalculationQuery
-from data_type_conversion import __to_int_with_rescue__
-from typing import cast
-import sys
-sys.path.append('./calculator_cli_app/src')
-sys.path.append('./calculator_cli_app/src/lib')
-sys.path.append('./calculator_cli_app/src/queries')
-sys.path.append('./calculator_cli_app/src/validations')
 
 
-class Application:
+class Application(ArgsValidation):
+    @classmethod
+    def run(cls, args: list[str]) -> None:
+        cls(args)._run()
+
     def __init__(self, args: list[str]) -> None:
-        self.args_size: int = len(args)
-        if self.args_size > 0:
-            self.seed: str = args[0]
-            self.n: str = args[-1]
-        else:
-            self.seed = ''
-            self.n = ''
-        self.calculation_query: CalculationQuery = CalculationQuery(self.seed)
+        self._args_size: int = len(args)
+        self._seed: str | None = args[0] if args else None
+        self._n: str | None = args[-1] if args else None
 
-    def run(self) -> None:
-        __validate__(self.args_size, self.seed, __to_int_with_rescue__(self.n))
+    def _run(self) -> None:
+        n = self._n_to_int_nonzero()
+        self.validate(self._args_size, self._seed, n)
+        assert n is not None
+        print(self._calculation_query.f(n))
 
-        result = self.calculation_query.f(
-            cast(int, __to_int_with_rescue__(self.n)))
-        print(result)
+    # private
+
+    def _n_to_int_nonzero(self) -> int | None:
+        try:
+            value = int(self._n) if self._n is not None else None
+        except (ValueError, TypeError):
+            return None
+        return value if value else None
+
+    @property
+    def _calculation_query(self) -> CalculationQuery:
+        if not hasattr(self, '_cached_calculation_query'):
+            self._cached_calculation_query: CalculationQuery = \
+                CalculationQuery(self._seed or '')
+        return self._cached_calculation_query

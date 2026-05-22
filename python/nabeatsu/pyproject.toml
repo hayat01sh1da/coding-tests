@@ -1,3 +1,7 @@
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+python_classes = ["Test*", "*Test"]
+
 [tool.mypy]
 python_version = "3.14"
 warn_return_any = true

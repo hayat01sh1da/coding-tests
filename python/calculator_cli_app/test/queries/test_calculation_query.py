@@ -1,15 +1,21 @@
-import pytest
-
 from calculation_query import CalculationQuery
 
 
-@pytest.mark.parametrize(
-    ('argument', 'expected'),
-    [
-        (0, 1),
-        (2, 2),
-        (4, 348),
-    ],
-)
-def test_f(argument: int, expected: int) -> None:
-    assert CalculationQuery('foo').f(argument) == expected
+class CalculationQueryTest:
+    def setup_method(self) -> None:
+        self._calculation_query: CalculationQuery = CalculationQuery('foo')
+
+
+class ArgumentZeroTest(CalculationQueryTest):
+    def test_f(self) -> None:
+        assert self._calculation_query.f(0) == 1
+
+
+class ArgumentTwoTest(CalculationQueryTest):
+    def test_f(self) -> None:
+        assert self._calculation_query.f(2) == 2
+
+
+class ArgumentFourTest(CalculationQueryTest):
+    def test_f(self) -> None:
+        assert self._calculation_query.f(4) == 348

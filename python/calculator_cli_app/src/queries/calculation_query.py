@@ -1,13 +1,12 @@
-import urllib.request
-import urllib.parse
-import os
 import json
+import os
+import urllib.parse
+import urllib.request
 
 
 class CalculationQuery:
     def __init__(self, seed: str) -> None:
-        self.seed: str = seed
-        self.uri: str = os.environ['CALCULATION_API']
+        self._seed: str = seed
 
     def f(self, n: int) -> int:
         if n == 0:
@@ -18,14 +17,20 @@ class CalculationQuery:
             return self.f(n - 1) + self.f(n - 2) + \
                 self.f(n - 3) + self.f(n - 4)
         else:
-            return self.__ask_server__(n)
+            return self._ask_server(n)
 
     # private
 
-    def __ask_server__(self, n: int) -> int:
-        params = {'seed': self.seed, 'n': n}
-        req = urllib.request.Request('{}?{}'.format(
-            self.uri, urllib.parse.urlencode(params)))
+    @property
+    def _uri(self) -> str:
+        if not hasattr(self, '_cached_uri'):
+            self._cached_uri: str = os.environ['CALCULATION_API']
+        return self._cached_uri
+
+    def _ask_server(self, n: int) -> int:
+        params = {'seed': self._seed, 'n': n}
+        req = urllib.request.Request(
+            f'{self._uri}?{urllib.parse.urlencode(params)}')
         res = urllib.request.urlopen(req)
         result: int = json.loads(res.read())['result']
         return result
