@@ -13,14 +13,14 @@ $ pip install -r requirements.txt
 ### 3-1. Run CalculatorCliApp::Application
 
 ```command
-$ python ./calculator_cli_app/main.py foo 4
+$ invoke run_calculator_cli_app foo 4
 348
 ```
 
 ### 3-2. Print fibonacci sequence
 
 ```command
-$ python ./fibonacci_sequence/main.py
+$ invoke print_fibonacci_sequence
 Provide the initial number to start the sequence from
 0
 Provide the number of iterations
@@ -31,7 +31,7 @@ Provide the number of iterations
 ### 3-3. Print fizzbuzz sequence
 
 ```command
-$ python ./fizzbuzz/main.py
+$ invoke print_fizzbuzz_sequence
 Provide the initial number to start the sequence from
 1
 Provide the terminal number of stop the sequence at
@@ -44,7 +44,7 @@ Which logic do you want to use? (1: if, 2: if and ternary, 3: ternary)
 ### 3-4. Print the result of letter matching inspection
 
 ```command
-$ python ./letter_matching_inspection/main.py
+$ invoke print_letter_matching_inspection
 Provide the source string to compare from
 listen
 Provide the target string to compare with
@@ -55,7 +55,7 @@ Result: true
 ### 3-5. Print nabeatsu sequence
 
 ```command
-$ python ./nabeatsu/main.py
+$ invoke print_nabeatsu_sequence
 Provide the initial number to start the sequence from
 1
 Provide the terminal number of stop the sequence at
@@ -68,12 +68,7 @@ Which logic do you want to use? (1: if, 2: ternary)
 ## 4. Unit Test
 
 ```command
-$ for directory in $(ls -d */)
-$ do
-$   cd $directory
-$     pytest .
-$   cd ../
-$ done
+$ invoke test
 ============================= test session starts ==============================
 platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
 rootdir: coding-tests/python/calculator_cli_app
