@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # rbs_inline: enabled
 
 require 'net/http'
@@ -14,11 +15,11 @@ module Queries
     # @rbs n: Integer
     # @rbs return: Integer
     def f(n)
-      if n == 0
+      if n.zero?
         1
       elsif n == 2
         2
-      elsif n % 2 == 0
+      elsif n.even?
         f(n - 1) + f(n - 2) + f(n - 3) + f(n - 4)
       else
         ask_server(n)

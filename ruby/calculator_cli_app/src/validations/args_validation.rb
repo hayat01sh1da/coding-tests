@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # rbs_inline: enabled
 
 module Validations
@@ -10,7 +11,7 @@ module Validations
       if args_size > 2
         puts 'Too many arguments'
         exit 1
-      elsif args_size == 0
+      elsif args_size.zero?
         puts 'No argument provided'
         exit 1
       elsif args_size == 1

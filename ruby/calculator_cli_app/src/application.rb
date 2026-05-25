@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 # rbs_inline: enabled
 
-require_relative './queries/calculation_query'
-require_relative './validations/args_validation'
+require_relative 'queries/calculation_query'
+require_relative 'validations/args_validation'
 
 module CalculatorCliApp
   class Application
