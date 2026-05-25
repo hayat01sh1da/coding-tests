@@ -5,9 +5,9 @@ module Validations
   module ArgsValidation
     # @rbs args_size: Integer
     # @rbs seed: String
-    # @rbs n: Integer?
+    # @rbs num: Integer?
     # @rbs return: void
-    def validate!(args_size, seed, n)
+    def validate!(args_size, seed, num)
       if args_size > 2
         puts 'Too many arguments'
         exit 1
@@ -17,7 +17,7 @@ module Validations
       elsif args_size == 1
         puts 'Provide both seed and n'
         exit 1
-      elsif !seed.instance_of?(String) || n.nil?
+      elsif !seed.instance_of?(String) || num.nil?
         puts 'Provide seed as string and n as number'
         exit 1
       end

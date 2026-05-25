@@ -12,17 +12,17 @@ module Queries
       @seed = seed
     end
 
-    # @rbs n: Integer
+    # @rbs num: Integer
     # @rbs return: Integer
-    def f(n)
-      if n.zero?
+    def f(num)
+      if num.zero?
         1
-      elsif n == 2
+      elsif num == 2
         2
-      elsif n.even?
-        f(n - 1) + f(n - 2) + f(n - 3) + f(n - 4)
+      elsif num.even?
+        f(num - 1) + f(num - 2) + f(num - 3) + f(num - 4)
       else
-        ask_server(n)
+        ask_server(num)
       end
     end
 
@@ -35,11 +35,10 @@ module Queries
       @uri ||= URI.parse(ENV.fetch('CALCULATION_API'))
     end
 
-    # @rbs n: Integer
+    # @rbs num: Integer
     # @rbs return: Integer
-    def ask_server(n)
-      params    = { seed:, n: }
-      uri.query = URI.encode_www_form(params)
+    def ask_server(num)
+      uri.query = URI.encode_www_form(seed:, n: num)
       req       = Net::HTTP::Get.new(uri)
       res       = Net::HTTP.start(uri.host.to_s, uri.port) { |http| http.request(req) }
       JSON.parse(res.body)['result']
