@@ -9,19 +9,26 @@ module Validations
     # @rbs num: Integer?
     # @rbs return: void
     def validate!(args_size, seed, num)
-      if args_size > 2
-        puts 'Too many arguments'
-        exit 1
-      elsif args_size.zero?
-        puts 'No argument provided'
-        exit 1
-      elsif args_size == 1
-        puts 'Provide both seed and n'
-        exit 1
-      elsif !seed.instance_of?(String) || num.nil?
-        puts 'Provide seed as string and n as number'
-        exit 1
-      end
+      message = validation_error(args_size, seed, num)
+      return unless message
+
+      puts message
+      exit 1
+    end
+
+    private
+
+    # @rbs args_size: Integer
+    # @rbs seed: String
+    # @rbs num: Integer?
+    # @rbs return: String?
+    def validation_error(args_size, seed, num)
+      return 'Too many arguments'                     if args_size > 2
+      return 'No argument provided'                   if args_size.zero?
+      return 'Provide both seed and n'                if args_size == 1
+      return 'Provide seed as string and n as number' if !seed.instance_of?(String) || num.nil?
+
+      nil
     end
   end
 end
