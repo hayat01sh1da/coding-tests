@@ -1,9 +1,11 @@
+# frozen_string_literal: true
 # rbs_inline: enabled
 
-require_relative './queries/calculation_query'
-require_relative './validations/args_validation'
+require_relative 'queries/calculation_query'
+require_relative 'validations/args_validation'
 
 module CalculatorCliApp
+  # Validates the CLI args and prints the result of CalculationQuery#f for them.
   class Application
     include ::Validations::ArgsValidation
 

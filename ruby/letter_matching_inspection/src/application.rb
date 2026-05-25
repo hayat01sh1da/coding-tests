@@ -1,6 +1,8 @@
+# frozen_string_literal: true
 # rbs_inline: enabled
 
 module LetterMatchingInspection
+  # Returns true when source and target are made up of exactly the same letters.
   class Application
     # @rbs source: String
     # @rbs target: String

@@ -3,19 +3,9 @@
 class CalculationQueryTest < Minitest::Test
   def setup: () -> untyped
 
-  private
+  def test_f_returns_one_when_argument_is_zero: () -> untyped
 
-  attr_reader calculation_query: untyped
-end
+  def test_f_returns_two_when_argument_is_two: () -> untyped
 
-class ArgumentZeroTest < CalculationQueryTest
-  def test_f: () -> untyped
-end
-
-class ArgumentTwoTest < CalculationQueryTest
-  def test_f: () -> untyped
-end
-
-class ArgumentFourTest < CalculationQueryTest
-  def test_f: () -> untyped
+  def test_f_recurses_for_an_even_argument: () -> untyped
 end
