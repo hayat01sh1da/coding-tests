@@ -4,52 +4,32 @@
 require 'minitest/autorun'
 require_relative '../src/application'
 
-class ApplicationTest < Minitest::Test; end
+class ApplicationTest < Minitest::Test
+  def test_fizzbuzz_in_if
+    assert_fizzbuzz_sequence(:fizzbuzz_in_if)
+  end
 
-class IfStatementTest < ApplicationTest
-  def test_fizzbuzz
+  def test_fizzbuzz_in_ternary
+    assert_fizzbuzz_sequence(:fizzbuzz_in_ternary)
+  end
+
+  def test_fizzbuzz_in_if_and_ternary
+    assert_fizzbuzz_sequence(:fizzbuzz_in_if_and_ternary)
+  end
+
+  private
+
+  def assert_fizzbuzz_sequence(impl)
     1.upto(100).each do |num|
-      if (num % 3).zero? && (num % 5).zero?
-        assert_equal 'FizzBuzz', fizzbuzz_in_if(num)
-      elsif (num % 3).zero?
-        assert_equal 'Fizz', fizzbuzz_in_if(num)
-      elsif (num % 5).zero?
-        assert_equal 'Buzz', fizzbuzz_in_if(num)
-      else
-        assert_equal num.to_s, fizzbuzz_in_if(num)
-      end
+      assert_equal expected_for(num), send(impl, num)
     end
   end
-end
 
-class TernaryStatementTest < ApplicationTest
-  def test_fizzbuzz
-    1.upto(100).each do |num|
-      if (num % 3).zero? && (num % 5).zero?
-        assert_equal 'FizzBuzz', fizzbuzz_in_ternary(num)
-      elsif (num % 3).zero?
-        assert_equal 'Fizz', fizzbuzz_in_ternary(num)
-      elsif (num % 5).zero?
-        assert_equal 'Buzz', fizzbuzz_in_ternary(num)
-      else
-        assert_equal num.to_s, fizzbuzz_in_ternary(num)
-      end
-    end
-  end
-end
+  def expected_for(num)
+    return 'FizzBuzz' if (num % 15).zero?
+    return 'Fizz'     if (num % 3).zero?
+    return 'Buzz'     if (num % 5).zero?
 
-class HybridStatementTest < ApplicationTest
-  def test_fizzbuzz
-    1.upto(100).each do |num|
-      if (num % 3).zero? && (num % 5).zero?
-        assert_equal 'FizzBuzz', fizzbuzz_in_if_and_ternary(num)
-      elsif (num % 3).zero?
-        assert_equal 'Fizz', fizzbuzz_in_if_and_ternary(num)
-      elsif (num % 5).zero?
-        assert_equal 'Buzz', fizzbuzz_in_if_and_ternary(num)
-      else
-        assert_equal num.to_s, fizzbuzz_in_if_and_ternary(num)
-      end
-    end
+    num.to_s
   end
 end

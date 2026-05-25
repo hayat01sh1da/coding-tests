@@ -33,12 +33,3 @@ Style/Documentation:
     - 'letter_matching_inspection/test/application_test.rb'
     - 'nabeatsu/test/application_test.rb'
 
-# Offense count: 8
-# Configuration parameters: AllowedClasses.
-Style/OneClassPerFile:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'calculator_cli_app/test/queries/calculation_query_test.rb'
-    - 'fibonacci_sequence/test/application_test.rb'
-    - 'fizzbuzz/test/application_test.rb'
