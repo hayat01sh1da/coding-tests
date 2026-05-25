@@ -5,6 +5,8 @@ require 'net/http'
 require 'json'
 
 module Queries
+  # Recursive calculator that handles base cases locally and delegates odd
+  # values of num to a remote calculation service.
   class CalculationQuery
     # @rbs seed: String
     # @rbs return: void

@@ -6,20 +6,3 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 16
-# Configuration parameters: AllowedConstants.
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'calculator_cli_app/src/application.rb'
-    - 'calculator_cli_app/src/queries/calculation_query.rb'
-    - 'calculator_cli_app/src/validations/args_validation.rb'
-    - 'calculator_cli_app/test/application_test.rb'
-    - 'calculator_cli_app/test/queries/calculation_query_test.rb'
-    - 'fibonacci_sequence/test/application_test.rb'
-    - 'fizzbuzz/test/application_test.rb'
-    - 'letter_matching_inspection/src/application.rb'
-    - 'letter_matching_inspection/test/application_test.rb'
-    - 'nabeatsu/test/application_test.rb'
-

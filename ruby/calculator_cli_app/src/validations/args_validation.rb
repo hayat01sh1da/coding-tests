@@ -2,6 +2,7 @@
 # rbs_inline: enabled
 
 module Validations
+  # Argument-shape checks for CalculatorCliApp::Application.
   module ArgsValidation
     # @rbs args_size: Integer
     # @rbs seed: String
