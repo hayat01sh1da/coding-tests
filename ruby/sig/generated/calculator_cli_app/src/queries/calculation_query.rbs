@@ -1,14 +1,16 @@
 # Generated from calculator_cli_app/src/queries/calculation_query.rb with RBS::Inline
 
 module Queries
+  # Recursive calculator that handles base cases locally and delegates odd
+  # values of num to a remote calculation service.
   class CalculationQuery
     # @rbs seed: String
     # @rbs return: void
     def initialize: (String seed) -> void
 
-    # @rbs n: Integer
+    # @rbs num: Integer
     # @rbs return: Integer
-    def f: (Integer n) -> Integer
+    def f: (Integer num) -> Integer
 
     private
 
@@ -17,8 +19,8 @@ module Queries
     # @rbs return: URI::Generic
     def uri: () -> URI::Generic
 
-    # @rbs n: Integer
+    # @rbs num: Integer
     # @rbs return: Integer
-    def ask_server: (Integer n) -> Integer
+    def ask_server: (Integer num) -> Integer
   end
 end

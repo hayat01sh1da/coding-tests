@@ -1,16 +1,15 @@
 # Generated from fizzbuzz/test/application_test.rb with RBS::Inline
 
 class ApplicationTest < Minitest::Test
-end
+  def test_fizzbuzz_in_if: () -> untyped
 
-class IfStatementTest < ApplicationTest
-  def test_fizzbuzz: () -> untyped
-end
+  def test_fizzbuzz_in_ternary: () -> untyped
 
-class TernaryStatementTest < ApplicationTest
-  def test_fizzbuzz: () -> untyped
-end
+  def test_fizzbuzz_in_if_and_ternary: () -> untyped
 
-class HybridStatementTest < ApplicationTest
-  def test_fizzbuzz: () -> untyped
+  private
+
+  def assert_fizzbuzz_sequence: (untyped impl) -> untyped
+
+  def expected_for: (untyped num) -> untyped
 end

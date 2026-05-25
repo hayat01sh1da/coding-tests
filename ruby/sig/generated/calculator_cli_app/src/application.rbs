@@ -1,6 +1,7 @@
 # Generated from calculator_cli_app/src/application.rb with RBS::Inline
 
 module CalculatorCliApp
+  # Validates the CLI args and prints the result of CalculationQuery#f for them.
   class Application
     include ::Validations::ArgsValidation
 
