@@ -7,12 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 3
-# Configuration parameters: AllowKeywordBlockArguments.
-Lint/UnderscorePrefixedVariableName:
-  Exclude:
-    - 'Rakefile'
-
-# Offense count: 3
 # Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
 Metrics/AbcSize:
   Max: 20
@@ -46,11 +40,6 @@ Style/Documentation:
     - 'letter_matching_inspection/src/application.rb'
     - 'letter_matching_inspection/test/application_test.rb'
     - 'nabeatsu/test/application_test.rb'
-
-# Offense count: 2
-Style/MultilineBlockChain:
-  Exclude:
-    - 'Rakefile'
 
 # Offense count: 8
 # Configuration parameters: AllowedClasses.
