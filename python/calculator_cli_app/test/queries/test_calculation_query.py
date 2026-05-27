@@ -1,21 +1,23 @@
+import pytest
+
 from calculation_query import CalculationQuery
 
 
-class CalculationQueryTest:
-    def setup_method(self) -> None:
-        self._calculation_query: CalculationQuery = CalculationQuery('foo')
+@pytest.fixture
+def calculation_query() -> CalculationQuery:
+    return CalculationQuery('foo')
 
 
-class ArgumentZeroTest(CalculationQueryTest):
-    def test_f(self) -> None:
-        assert self._calculation_query.f(0) == 1
+def test_f_returns_one_when_argument_is_zero(
+        calculation_query: CalculationQuery) -> None:
+    assert calculation_query.f(0) == 1
 
 
-class ArgumentTwoTest(CalculationQueryTest):
-    def test_f(self) -> None:
-        assert self._calculation_query.f(2) == 2
+def test_f_returns_two_when_argument_is_two(
+        calculation_query: CalculationQuery) -> None:
+    assert calculation_query.f(2) == 2
 
 
-class ArgumentFourTest(CalculationQueryTest):
-    def test_f(self) -> None:
-        assert self._calculation_query.f(4) == 348
+def test_f_recurses_for_an_even_argument(
+        calculation_query: CalculationQuery) -> None:
+    assert calculation_query.f(4) == 348
