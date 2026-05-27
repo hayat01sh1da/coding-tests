@@ -1,3 +1,5 @@
+from collections.abc import Callable
+
 from application import (
     fizzbuzz_in_if,
     fizzbuzz_in_if_and_ternary,
@@ -5,44 +7,28 @@ from application import (
 )
 
 
-class ApplicationTest:
-    pass
+def _expected_for(num: int) -> str:
+    if num % 15 == 0:
+        return 'FizzBuzz'
+    if num % 3 == 0:
+        return 'Fizz'
+    if num % 5 == 0:
+        return 'Buzz'
+    return str(num)
 
 
-class IfStatementTest(ApplicationTest):
-    def test_fizzbuzz(self) -> None:
-        for num in range(1, 101):
-            if num % 3 == 0 and num % 5 == 0:
-                assert fizzbuzz_in_if(num) == 'FizzBuzz'
-            elif num % 3 == 0:
-                assert fizzbuzz_in_if(num) == 'Fizz'
-            elif num % 5 == 0:
-                assert fizzbuzz_in_if(num) == 'Buzz'
-            else:
-                assert fizzbuzz_in_if(num) == str(num)
+def _assert_fizzbuzz_sequence(impl: Callable[[int], str]) -> None:
+    for num in range(1, 101):
+        assert impl(num) == _expected_for(num)
 
 
-class TernaryStatementTest(ApplicationTest):
-    def test_fizzbuzz(self) -> None:
-        for num in range(1, 101):
-            if num % 3 == 0 and num % 5 == 0:
-                assert fizzbuzz_in_ternary(num) == 'FizzBuzz'
-            elif num % 3 == 0:
-                assert fizzbuzz_in_ternary(num) == 'Fizz'
-            elif num % 5 == 0:
-                assert fizzbuzz_in_ternary(num) == 'Buzz'
-            else:
-                assert fizzbuzz_in_ternary(num) == str(num)
+def test_fizzbuzz_in_if() -> None:
+    _assert_fizzbuzz_sequence(fizzbuzz_in_if)
 
 
-class HybridStatementTest(ApplicationTest):
-    def test_fizzbuzz(self) -> None:
-        for num in range(1, 101):
-            if num % 3 == 0 and num % 5 == 0:
-                assert fizzbuzz_in_if_and_ternary(num) == 'FizzBuzz'
-            elif num % 3 == 0:
-                assert fizzbuzz_in_if_and_ternary(num) == 'Fizz'
-            elif num % 5 == 0:
-                assert fizzbuzz_in_if_and_ternary(num) == 'Buzz'
-            else:
-                assert fizzbuzz_in_if_and_ternary(num) == str(num)
+def test_fizzbuzz_in_ternary() -> None:
+    _assert_fizzbuzz_sequence(fizzbuzz_in_ternary)
+
+
+def test_fizzbuzz_in_if_and_ternary() -> None:
+    _assert_fizzbuzz_sequence(fizzbuzz_in_if_and_ternary)
