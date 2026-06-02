@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/hayat01sh1da/coding-tests/javascript#readme",
   "dependencies": {
-    "@babel/core": "7.29.0",
-    "@babel/preset-env": "7.29.5",
-    "babel-jest": "30.4.1",
-    "jest": "30.4.2"
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2"
   }
 }
