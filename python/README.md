@@ -1,6 +1,6 @@
 ## 1. Environment
 
-- Python 3.14.5
+- Python 3.14.6
 
 ## 2. Install Libraries via requirements.txt
 
@@ -70,7 +70,7 @@ Which logic do you want to use? (1: if, 2: ternary)
 ```command
 $ invoke test
 ============================= test session starts ==============================
-platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
+platform linux -- Python 3.14.6, pytest-9.0.3, pluggy-1.6.0
 rootdir: coding-tests/python/calculator_cli_app
 configfile: pyproject.toml
 collected 4 items
@@ -80,7 +80,7 @@ test/test_application.py .                                               [100%]
 
 ============================== 4 passed in 1.91s ===============================
 ============================= test session starts ==============================
-platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
+platform linux -- Python 3.14.6, pytest-9.0.3, pluggy-1.6.0
 rootdir: coding-tests/python/fibonacci_sequence
 configfile: pyproject.toml
 collected 2 items
@@ -89,7 +89,7 @@ test/test_application.py ..                                              [100%]
 
 ============================== 2 passed in 0.08s ===============================
 ============================= test session starts ==============================
-platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
+platform linux -- Python 3.14.6, pytest-9.0.3, pluggy-1.6.0
 rootdir: coding-tests/python/fizzbuzz
 configfile: pyproject.toml
 collected 3 items
@@ -98,7 +98,7 @@ test/test_application.py ...                                             [100%]
 
 ============================== 3 passed in 0.10s ===============================
 ============================= test session starts ==============================
-platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
+platform linux -- Python 3.14.6, pytest-9.0.3, pluggy-1.6.0
 rootdir: coding-tests/python/letter_matching_inspection
 configfile: pyproject.toml
 collected 3 items
@@ -107,7 +107,7 @@ test/test_application.py ...                                             [100%]
 
 ============================== 3 passed in 0.09s ===============================
 ============================= test session starts ==============================
-platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
+platform linux -- Python 3.14.6, pytest-9.0.3, pluggy-1.6.0
 rootdir: coding-tests/python/nabeatsu
 configfile: pyproject.toml
 collected 2 items
