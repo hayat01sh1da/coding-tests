@@ -12,7 +12,7 @@
 | Gemfile              | 4.0.14                             | Per-project dependency manifest; versions install via Bundler.                  |
 | Bundler              | 4.0.14                             | Resolves and installs the gems declared in the Gemfile.                         |
 | Python exercises     | CPython 3.14.6 (`.python-version`) | Requirements are declared per exercise; base templates use stdlib only.         |
-| JavaScript exercises | Node v26.3.0 (`.node-version`)     | Use the Node toolchain plus any dependencies listed inside each `package.json`. |
+| JavaScript exercises | Node v26.4.0 (`.node-version`)     | Use the Node toolchain plus any dependencies listed inside each `package.json`. |
 
 ## Backward Compatibility
 
