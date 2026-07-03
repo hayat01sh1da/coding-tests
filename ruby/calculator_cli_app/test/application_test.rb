@@ -5,6 +5,7 @@ require 'minitest/autorun'
 require_relative '../src/application'
 
 module CalculatorCliApp
+  # Tests the calculator CLI application entry point.
   class ApplicationTest < Minitest::Test
     def setup
       @argv = ['foo', 4]

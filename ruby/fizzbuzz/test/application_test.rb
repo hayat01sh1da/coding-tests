@@ -4,6 +4,7 @@
 require 'minitest/autorun'
 require_relative '../src/application'
 
+# Tests every FizzBuzz implementation variant.
 class ApplicationTest < Minitest::Test
   def test_fizzbuzz_in_if
     assert_fizzbuzz_sequence(:fizzbuzz_in_if)

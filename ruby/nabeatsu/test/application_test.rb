@@ -4,6 +4,7 @@
 require 'minitest/autorun'
 require_relative '../src/application'
 
+# Tests every Nabeatsu implementation variant.
 class ApplicationTest < Minitest::Test
   def test_go_crazy_in_if_statement
     1.upto(40).each do |num|

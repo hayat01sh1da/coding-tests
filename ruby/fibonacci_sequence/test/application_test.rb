@@ -4,6 +4,7 @@
 require 'minitest/autorun'
 require_relative '../src/application'
 
+# Tests the Fibonacci sequence generator.
 class ApplicationTest < Minitest::Test
   def test_fibonacci_from_zero
     assert_equal(
