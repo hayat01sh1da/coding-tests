@@ -1,3 +1,5 @@
+"""Tests the letter-matching inspection application."""
+
 from application import Application
 
 

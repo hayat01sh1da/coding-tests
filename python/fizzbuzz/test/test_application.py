@@ -1,3 +1,5 @@
+"""Tests every FizzBuzz implementation variant."""
+
 from collections.abc import Callable
 
 from application import (

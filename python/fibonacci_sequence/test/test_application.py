@@ -1,3 +1,5 @@
+"""Tests the Fibonacci sequence generator."""
+
 from application import fibonacci
 
 
