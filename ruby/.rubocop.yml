@@ -7,9 +7,3 @@ plugins:
 AllCops:
   TargetRubyVersion: 4.0
   NewCops: enable
-
-# Test directories live under each sub-app (e.g. fizzbuzz/test/) and are not
-# matched by the default top-level `test/**/*` glob, so list them here.
-Style/Documentation:
-  Exclude:
-    - '**/test/**/*'
