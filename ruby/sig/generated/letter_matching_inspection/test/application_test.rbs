@@ -1,0 +1,12 @@
+# Generated from letter_matching_inspection/test/application_test.rb with RBS::Inline
+
+module LetterMatchingInspection
+  # Tests the letter-matching inspection application.
+  class ApplicationTest < Minitest::Test
+    def test_exactly_equal_size_and_included: () -> untyped
+
+    def test_partly_equal_size_and_included: () -> untyped
+
+    def test_not_equal_size_and_included: () -> untyped
+  end
+end
