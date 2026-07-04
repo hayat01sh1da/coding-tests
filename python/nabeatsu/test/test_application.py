@@ -1,3 +1,5 @@
+"""Tests every Nabeatsu implementation variant."""
+
 from collections.abc import Callable
 
 from application import go_crazy_in_if, go_crazy_in_ternary

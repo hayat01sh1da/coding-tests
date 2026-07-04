@@ -1,3 +1,5 @@
+"""Tests the query that performs the arithmetic for the calculator CLI app."""
+
 import pytest
 
 from calculation_query import CalculationQuery

@@ -1,3 +1,5 @@
+"""Tests the calculator CLI application entry point."""
+
 import pytest
 
 from application import Application
