@@ -4,6 +4,7 @@
 require 'minitest/autorun'
 require_relative '../../src/queries/calculation_query'
 
+# Tests the query that performs the arithmetic for the calculator CLI app.
 class CalculationQueryTest < Minitest::Test
   def setup
     @calculation_query = ::Queries::CalculationQuery.new('foo')

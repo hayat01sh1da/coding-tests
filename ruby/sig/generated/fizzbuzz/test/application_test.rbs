@@ -1,5 +1,6 @@
 # Generated from fizzbuzz/test/application_test.rb with RBS::Inline
 
+# Tests every FizzBuzz implementation variant.
 class ApplicationTest < Minitest::Test
   def test_fizzbuzz_in_if: () -> untyped
 

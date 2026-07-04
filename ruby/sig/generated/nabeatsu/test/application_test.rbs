@@ -1,5 +1,6 @@
 # Generated from nabeatsu/test/application_test.rb with RBS::Inline
 
+# Tests every Nabeatsu implementation variant.
 class ApplicationTest < Minitest::Test
   def test_go_crazy_in_if_statement: () -> untyped
 

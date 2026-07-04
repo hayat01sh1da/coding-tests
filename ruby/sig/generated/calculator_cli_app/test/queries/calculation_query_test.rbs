@@ -1,5 +1,6 @@
 # Generated from calculator_cli_app/test/queries/calculation_query_test.rb with RBS::Inline
 
+# Tests the query that performs the arithmetic for the calculator CLI app.
 class CalculationQueryTest < Minitest::Test
   def setup: () -> untyped
 

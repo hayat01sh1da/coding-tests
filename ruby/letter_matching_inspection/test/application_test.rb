@@ -1,9 +1,11 @@
 # frozen_string_literal: true
+# rbs_inline: enabled
 
 require 'minitest/autorun'
 require_relative '../src/application'
 
 module LetterMatchingInspection
+  # Tests the letter-matching inspection application.
   class ApplicationTest < Minitest::Test
     def test_exactly_equal_size_and_included
       assert ::LetterMatchingInspection::Application.exactly_equal_size_and_included?(source: 'hogefoobar',

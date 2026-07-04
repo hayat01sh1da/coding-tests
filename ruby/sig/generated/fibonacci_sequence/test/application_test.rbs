@@ -1,5 +1,6 @@
 # Generated from fibonacci_sequence/test/application_test.rb with RBS::Inline
 
+# Tests the Fibonacci sequence generator.
 class ApplicationTest < Minitest::Test
   def test_fibonacci_from_zero: () -> untyped
 
