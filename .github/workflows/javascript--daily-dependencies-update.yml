@@ -1,0 +1,87 @@
+# This workflow updates pnpm package dependencies every day and opens a pull
+# request when any dependency changes are detected.
+
+name: JavaScript - Daily Dependencies Update
+
+on:
+  schedule:
+    # 0:00 JST every day
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Install pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
+      - name: Update pnpm Package Dependencies
+        working-directory: ./javascript
+        run: pnpm update
+      - name: Generate Pull Request Description
+        env:
+          BODY_PATH: ${{ runner.temp }}/pr_body.md
+        run: |
+          ROWS=$(git diff --unified=0 -- javascript/pnpm-lock.yaml \
+            | grep -E "^[+-]  '?[^ ]+@[0-9]" \
+            | grep -v '(' \
+            | sed -E "s/^(.)  /\1 /; s/'//g; s/:$//" \
+            | awk '{ i = match($2, /@[^@]*$/); print $1, substr($2, 1, i - 1), substr($2, i + 1) }' \
+            | awk '{ if ($1 == "-") before[$2] = $3; else after[$2] = $3 }
+              END {
+                for (name in after) {
+                  if (name in before) {
+                    if (before[name] != after[name]) print "|" name " |" before[name] " |" after[name] " |Updated |"
+                    delete before[name]
+                  } else {
+                    print "|" name " |- |" after[name] " |Added |"
+                  }
+                }
+                for (name in before) print "|" name " |" before[name] " |- |Removed |"
+              }' \
+            | sort)
+          if [ -z "$ROWS" ]; then ROWS='| | | |No dependency changes detected |'; fi
+          cat > "$BODY_PATH" <<EOF
+          ## 1. Overview
+
+          This pull request was created automatically by the JavaScript - Daily Dependencies Update workflow.
+          It updates every pnpm package dependency to the latest version allowed by package.json and regenerates pnpm-lock.yaml:
+
+          ~~~console
+          pnpm update
+          ~~~
+
+          ## 2. Key Changes & Differences
+
+          |Packages |Before |After |Changes & Differences |
+          |:-|:-|:-|:-|
+          $ROWS
+
+          ## 3. Summary
+
+          All pnpm package dependencies in javascript/pnpm-lock.yaml are now up to date.
+          Please make sure that all CI workflows pass before merging this pull request.
+
+          ## 4. References
+
+          - [JavaScript - Daily Dependencies Update workflow run](https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)
+          - [pnpm update documentation](https://pnpm.io/cli/update)
+          EOF
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: daily/javascript-dependency-updates
+          delete-branch: true
+          commit-message: "[Daily][JavaScript] Update pnpm Package Dependencies"
+          title: "[Daily][JavaScript] Update pnpm Package Dependencies"
+          body-path: ${{ runner.temp }}/pr_body.md
