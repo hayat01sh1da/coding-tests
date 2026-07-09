@@ -19,12 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
+      - uses: ./.github/actions/setup-nodejs
         with:
-          node-version-file: .node-version
-      - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
+          working-directory: ./javascript
       - name: Update pnpm Package Dependencies
         working-directory: ./javascript
         run: pnpm update
