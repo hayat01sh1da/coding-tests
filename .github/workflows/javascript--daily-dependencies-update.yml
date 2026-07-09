@@ -14,17 +14,14 @@ permissions:
   pull-requests: write
 
 jobs:
-  update:
+  update_pnpm_package_dependencies:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
+      - uses: ./.github/actions/setup-nodejs
         with:
-          node-version-file: .node-version
-      - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
+          working-directory: ./javascript
       - name: Update pnpm Package Dependencies
         working-directory: ./javascript
         run: pnpm update
@@ -32,26 +29,8 @@ jobs:
         env:
           BODY_PATH: ${{ runner.temp }}/pr_body.md
         run: |
-          ROWS=$(git diff --unified=0 -- javascript/pnpm-lock.yaml \
-            | grep -E "^[+-]  '?[^ ]+@[0-9]" \
-            | grep -v '(' \
-            | sed -E "s/^(.)  /\1 /; s/'//g; s/:$//" \
-            | awk '{ i = match($2, /@[^@]*$/); print $1, substr($2, 1, i - 1), substr($2, i + 1) }' \
-            | awk '{ if ($1 == "-") before[$2] = $3; else after[$2] = $3 }
-              END {
-                for (name in after) {
-                  if (name in before) {
-                    if (before[name] != after[name]) print "|" name " |" before[name] " |" after[name] " |Updated |"
-                    delete before[name]
-                  } else {
-                    print "|" name " |- |" after[name] " |Added |"
-                  }
-                }
-                for (name in before) print "|" name " |" before[name] " |- |Removed |"
-              }' \
-            | sort)
-          if [ -z "$ROWS" ]; then ROWS='| | | |No dependency changes detected |'; fi
-          cat > "$BODY_PATH" <<EOF
+          {
+            cat <<'OVERVIEW'
           ## 1. Overview
 
           This pull request was created automatically by the JavaScript - Daily Dependencies Update workflow.
@@ -62,10 +41,10 @@ jobs:
           ~~~
 
           ## 2. Key Changes & Differences
-
-          |Packages |Before |After |Changes & Differences |
-          |:-|:-|:-|:-|
-          $ROWS
+          OVERVIEW
+            echo
+            bash .github/scripts/dependency_report.sh pnpm javascript/pnpm-lock.yaml javascript/package.json Packages
+            cat <<SUMMARY
 
           ## 3. Summary
 
@@ -76,14 +55,16 @@ jobs:
 
           - [JavaScript - Daily Dependencies Update workflow run](https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)
           - [pnpm update documentation](https://pnpm.io/cli/update)
-          EOF
+          SUMMARY
+          } > "$BODY_PATH"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
           branch: daily/javascript-dependency-updates
           delete-branch: true
+          add-paths: javascript/pnpm-lock.yaml
           commit-message: "[Daily][JavaScript] Update pnpm Package Dependencies"
           title: "[Daily][JavaScript] Update pnpm Package Dependencies"
           body-path: ${{ runner.temp }}/pr_body.md
           reviewers: hayat01sh1da
-          assignees: github-actions[bot]
+          assignees: hayat01sh1da
