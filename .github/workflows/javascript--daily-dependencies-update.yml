@@ -79,6 +79,7 @@ jobs:
         with:
           branch: daily/javascript-dependency-updates
           delete-branch: true
+          add-paths: javascript/pnpm-lock.yaml
           commit-message: "[Daily][JavaScript] Update pnpm Package Dependencies"
           title: "[Daily][JavaScript] Update pnpm Package Dependencies"
           body-path: ${{ runner.temp }}/pr_body.md
