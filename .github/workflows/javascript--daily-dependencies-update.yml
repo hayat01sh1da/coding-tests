@@ -36,7 +36,7 @@ jobs:
           ## 1. Overview
 
           This pull request was created automatically by the JavaScript - Daily Dependencies Update workflow.
-          It updates pnpm itself (pinning the new version to the packageManager field of package.json), updates every pnpm package dependency to the latest version allowed by package.json, and regenerates pnpm-lock.yaml:
+          It updates pnpm itself (pinning the new version to the packageManager field of package.json), updates every pnpm package dependency to the latest version allowed by package.json, regenerates pnpm-lock.yaml, and mirrors the new pnpm version to the Environment section of every README.md and to the description field of every package.json:
 
           ~~~console
           corepack use pnpm@latest
@@ -72,6 +72,8 @@ jobs:
           add-paths: |
             javascript/package.json
             javascript/pnpm-lock.yaml
+            README.md
+            javascript/README.md
           commit-message: "[Daily][JavaScript] Update pnpm Package Dependencies at ${{ env.TIMESTAMP }}"
           title: "[Daily][JavaScript] Update pnpm Package Dependencies"
           body-path: ${{ runner.temp }}/pr_body.md
