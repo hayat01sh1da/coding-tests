@@ -26,6 +26,7 @@ jobs:
         working-directory: ./javascript
         run: |
           corepack use pnpm@latest
+          pnpm approve-builds
           pnpm update
       - name: Generate Pull Request Description
         env:
@@ -40,6 +41,7 @@ jobs:
 
           ~~~console
           corepack use pnpm@latest
+          pnpm approve-builds
           pnpm update
           ~~~
 
