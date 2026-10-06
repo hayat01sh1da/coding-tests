@@ -8,7 +8,7 @@
 | Track / Component    | Version(s) / Tooling               | Notes                                                                           |
 | -------------------- | ---------------------------------- | ------------------------------------------------------------------------------- |
 | OS baseline          | WSL (Ubuntu 25.10)                 | Shared environment across tracks.                                               |
-| Ruby exercises       | Ruby 4.0.6 (`.ruby-version`)       | Bundler-managed gems per kata; default relies on stdlib.                        |
+| Ruby exercises       | Ruby 4.0.7 (`.ruby-version`)       | Bundler-managed gems per kata; default relies on stdlib.                        |
 | Gemfile              | 4.0.16                             | Per-project dependency manifest; versions install via Bundler.                  |
 | Bundler              | 4.0.16                             | Resolves and installs the gems declared in the Gemfile.                         |
 | Python exercises     | CPython 3.14.7 (`.python-version`) | Requirements are declared per exercise; base templates use stdlib only.         |
