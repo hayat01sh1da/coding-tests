@@ -11,7 +11,7 @@
 | Ruby exercises       | Ruby 4.0.6 (`.ruby-version`)       | Bundler-managed gems per kata; default relies on stdlib.                        |
 | Gemfile              | 4.0.16                             | Per-project dependency manifest; versions install via Bundler.                  |
 | Bundler              | 4.0.16                             | Resolves and installs the gems declared in the Gemfile.                         |
-| Python exercises     | CPython 3.14.7 (`.python-version`) | Requirements are declared per exercise; base templates use stdlib only.         |
+| Python exercises     | CPython 3.14.8 (`.python-version`) | Requirements are declared per exercise; base templates use stdlib only.         |
 | JavaScript exercises | Node v26.8.1 (`.node-version`)     | Use the Node toolchain plus any dependencies listed inside each `package.json`. |
 
 ## Backward Compatibility
